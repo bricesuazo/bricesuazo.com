@@ -1,0 +1,24 @@
+{
+  "name": "@bricesuazo/constant",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@bricesuazo/eslint-config": "0.0.0",
+    "@bricesuazo/prettier-config": "0.0.0",
+    "@bricesuazo/tsconfig": "0.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@bricesuazo/eslint-config/base"
+    ]
+  },
+  "prettier": "@bricesuazo/prettier-config"
+}
