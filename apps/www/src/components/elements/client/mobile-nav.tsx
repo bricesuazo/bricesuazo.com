@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import clsx from "clsx";
 import { AlignLeftIcon, XIcon } from "lucide-react";
 
 import { nav } from "@bricesuazo/constant/config";
+import { cn } from "@bricesuazo/ui/utils";
 
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function MobileNav() {
         )}
       </button>
       <div
-        className={clsx(
+        className={cn(
           {
             "rendered pointer-events-all !opacity-100": isMenuOpen,
             "pointer-events-none": !isMenuOpen,
@@ -42,7 +42,7 @@ export default function MobileNav() {
               return (
                 <p
                   key={index}
-                  className={clsx(
+                  className={cn(
                     {
                       "w-0 translate-x-[-16px] border-transparent opacity-0 dark:border-transparent":
                         !isMenuOpen,

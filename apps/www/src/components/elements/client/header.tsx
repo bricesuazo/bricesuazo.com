@@ -2,13 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
+import { SettingsIcon } from "lucide-react";
 
 import { meta, nav } from "@bricesuazo/constant/config";
+import { Button } from "@bricesuazo/ui/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@bricesuazo/ui/ui/dialog";
+import { cn } from "@bricesuazo/ui/utils";
 
 import MobileNav from "./mobile-nav";
 
-function NavItem({
+function HeaderItem({
   href,
   text,
   target,
@@ -18,8 +28,6 @@ function NavItem({
   target?: string;
 }) {
   const path = usePathname();
-  if (!href) return null;
-  if (!path) return null;
   let isActive = path.split("/")[1]?.trim() === href.split("/")[1]?.trim();
   if (href.startsWith("https://") || href.startsWith("http://")) {
     isActive = false;
@@ -30,7 +38,7 @@ function NavItem({
       href={href}
       key={href}
       target={target}
-      className={clsx(
+      className={cn(
         {
           "active text-gray-800 dark:text-gray-200": isActive,
           "text-gray-700 dark:text-neutral-400": !isActive,
@@ -57,11 +65,11 @@ function NavItem({
   );
 }
 
-export function Nav() {
+export function Header() {
   return (
     <nav
       key="nav"
-      className="fixed top-0 z-[100] mx-0 mt-0 w-full shadow dark:shadow-2xl"
+      className="fixed top-0 z-50 mx-0 mt-0 w-full shadow dark:shadow-2xl"
     >
       <div className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 relative mx-auto flex h-[73px] w-full items-center justify-between border-b-[1px] border-gray-200/60 bg-white bg-opacity-70 pb-4 pt-4 duration-300 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:bg-opacity-70">
         <div className="fixed inset-0 z-[-1] h-[inherit] w-full backdrop-blur-xl" />
@@ -73,14 +81,16 @@ export function Nav() {
         <MobileNav />
         <div className="mr-auto flex gap-1">
           {nav.left.map((item, index) => {
-            return <NavItem key={index} href={item.href} text={item.title} />;
+            return (
+              <HeaderItem key={index} href={item.href} text={item.title} />
+            );
           })}
           {/* <Popover className="relative" /> */}
         </div>
         <div className="ml-auto flex gap-1">
           {nav.right.map((item, index) => {
             return (
-              <NavItem
+              <HeaderItem
                 key={index}
                 href={item.href}
                 text={item.title}
@@ -88,7 +98,25 @@ export function Nav() {
               />
             );
           })}
-          {/* <Settings className="ml-4 text-right" /> */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="secondary" size="icon" className="group">
+                <SettingsIcon
+                  size="1rem"
+                  className="duration-500 group-hover:rotate-180"
+                />
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Settings</DialogTitle>
+                <DialogDescription>
+                  Here you can change your settings, e.g. website theme. Changes
+                  will be saved automatically.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </nav>

@@ -1,5 +1,5 @@
 {
-  "name": "create-t3-turbo",
+  "name": "bricesuazo",
   "packageManager": "pnpm@8.9.2",
   "scripts": {
     "build": "turbo build",
@@ -13,7 +13,8 @@
     "format:fix": "turbo format --continue -- --write --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "ui": "pnpm --filter=ui ui"
   },
   "dependencies": {
     "@bricesuazo/prettier-config": "0.0.0",

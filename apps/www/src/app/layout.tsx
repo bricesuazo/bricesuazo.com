@@ -1,4 +1,4 @@
-import "~/styles/globals.css";
+import "@bricesuazo/tailwind-config/globals.css";
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -6,8 +6,9 @@ import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 
 import { meta } from "@bricesuazo/constant/config";
+import { cn } from "@bricesuazo/ui/utils";
 
-import { Nav } from "~/components/elements/client/nav";
+import { Header } from "~/components/elements/client/header";
 import { ThemeProvider, TRPCReactProvider } from "./providers";
 
 // export const runtime = "edge";
@@ -64,10 +65,15 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body
+        className={cn(
+          font.className,
+          "bg-[linear-gradient(180deg,_rgb(255,255,255)_84%,rgb(233,243,255)_100%)] dark:bg-[linear-gradient(180deg,_rgb(16,17,16)_84%,rgb(22,22,23)_100%)]",
+        )}
+      >
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           <TRPCReactProvider headers={headers()}>
-            <Nav />
+            <Header />
             <main className="flex flex-col px-6 antialiased">
               {props.children}
             </main>

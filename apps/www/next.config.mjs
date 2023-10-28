@@ -11,6 +11,7 @@ const config = {
     "@bricesuazo/auth",
     "@bricesuazo/constant",
     "@bricesuazo/db",
+    "@bricesuazo/ui",
   ],
   /** We already do linting and typechecking as separate tasks in CI */
   eslint: { ignoreDuringBuilds: true },

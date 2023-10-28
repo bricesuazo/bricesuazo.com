@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
 import { StarIcon, UsersIcon } from "lucide-react";
 
 import {
@@ -9,6 +8,7 @@ import {
   meta,
   technologies,
 } from "@bricesuazo/constant/config";
+import { cn } from "@bricesuazo/ui/utils";
 
 // import { ConvertNumber } from "@bricesuazo/constant/lib/utils";
 
@@ -302,7 +302,7 @@ export default function HomePage() {
                     className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border bg-gray-200/[25%] px-4 py-2 text-sm font-semibold text-blue-900 backdrop-blur-[9px] duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]"
                   >
                     <Image
-                      className={clsx(tech.class, "h-8 w-8 rounded-md")}
+                      className={cn(tech.class, "h-8 w-8 rounded-md")}
                       loading="lazy"
                       width={32}
                       height={32}
@@ -317,7 +317,7 @@ export default function HomePage() {
                     className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border bg-gray-200/[25%] px-4 py-2 text-sm font-semibold text-blue-900 backdrop-blur-[9px] duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]"
                   >
                     <Image
-                      className={clsx(tech.class, "h-8 w-8 rounded-md")}
+                      className={cn(tech.class, "h-8 w-8 rounded-md")}
                       loading="lazy"
                       width={32}
                       height={32}

@@ -1,12 +1,13 @@
 "use client";
 
 // import { useState } from "react";
-import clsx from "clsx";
 import {
   // AlertTriangleIcon,
   Loader2,
   // CheckCircleIcon,
 } from "lucide-react";
+
+import { cn } from "@bricesuazo/ui/utils";
 
 export function Contact() {
   // const handleSubmit = async (e) => {
@@ -185,7 +186,7 @@ export function Contact() {
           <input
             name="name"
             id="name"
-            className={clsx(
+            className={cn(
               "my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
             )}
             type="text"
@@ -207,7 +208,7 @@ export function Contact() {
           <input
             name="email"
             id="email"
-            className={clsx(
+            className={cn(
               "my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
             )}
             type="email"
@@ -231,7 +232,7 @@ export function Contact() {
           <textarea
             name="message"
             id="message"
-            className={clsx(
+            className={cn(
               "mt-2 max-h-40 min-h-[80px] w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
             )}
             placeholder="Hello there!"
