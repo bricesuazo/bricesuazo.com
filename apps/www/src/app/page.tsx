@@ -27,10 +27,15 @@ export default function HomePage() {
       <div className="before:bg-grid-[#000] dark:before:bg-grid-[#fff] bg-cover bg-fixed bg-right before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5">
         <div className="bg-main-gradient pointer-events-none absolute -top-1/2 bottom-0 left-0 right-0 z-[-1] bg-contain blur-[160px] will-change-contents"></div>
         <div className="mx-auto flex min-h-[calc(100vh-6rem)] flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
-          <div className="md:grid-cols-0 grid items-center gap-x-8 md:grid-cols-6">
-            <div className="f-full col-span-3 hidden md:flex">
-              <GlowEffect className="z-10 aspect-square w-full">
-                <Image src="/assets/logo.png" alt="Logo" fill />
+          <div className="md:grid-cols-0 grid items-center gap-x-8 md:grid-cols-5">
+            <div className="f-full col-span-2 hidden md:flex">
+              <GlowEffect className="z-10">
+                <Image
+                  src="/assets/logo.png"
+                  alt="Logo"
+                  width={500}
+                  height={500}
+                />
                 {/* <CodeCard userData={userData} contributions={contributions} /> */}
               </GlowEffect>
             </div>

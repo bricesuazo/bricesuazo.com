@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SettingsIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import { meta, nav } from "@bricesuazo/constant/config";
 import { Button } from "@bricesuazo/ui/ui/button";
@@ -14,6 +15,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@bricesuazo/ui/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@bricesuazo/ui/ui/select";
 import { cn } from "@bricesuazo/ui/utils";
 
 import MobileNav from "./mobile-nav";
@@ -66,12 +74,10 @@ function HeaderItem({
 }
 
 export function Header() {
+  const { setTheme } = useTheme();
   return (
-    <nav
-      key="nav"
-      className="fixed top-0 z-50 mx-0 mt-0 w-full shadow dark:shadow-2xl"
-    >
-      <div className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 relative mx-auto flex h-[73px] w-full items-center justify-between border-b-[1px] border-gray-200/60 bg-white bg-opacity-70 pb-4 pt-4 duration-300 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:bg-opacity-70">
+    <nav key="nav" className="fixed top-0 z-50 w-full shadow dark:shadow-2xl">
+      <div className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 relative mx-auto flex h-20 w-full items-center justify-between border-b-[1px] border-gray-200/60 bg-opacity-70 pb-4 pt-4 duration-300 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:bg-opacity-70">
         <div className="fixed inset-0 z-[-1] h-[inherit] w-full backdrop-blur-xl" />
         <Link href="/" key="main_page">
           <h3 className=" z-[1001] mx-8 text-xl font-semibold text-gray-800 duration-300 motion-reduce:transition-none dark:text-white">
@@ -79,7 +85,7 @@ export function Header() {
           </h3>
         </Link>
         <MobileNav />
-        <div className="mr-auto flex gap-1">
+        <div className="mr-auto flex gap-2">
           {nav.left.map((item, index) => {
             return (
               <HeaderItem key={index} href={item.href} text={item.title} />
@@ -115,6 +121,20 @@ export function Header() {
                   will be saved automatically.
                 </DialogDescription>
               </DialogHeader>
+              <Select
+                onValueChange={(value) => {
+                  setTheme(value);
+                }}
+              >
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="system">System</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                  <SelectItem value="light">Light</SelectItem>
+                </SelectContent>
+              </Select>
             </DialogContent>
           </Dialog>
         </div>
