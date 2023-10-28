@@ -32,8 +32,8 @@ export function GlowEffect({
       glareColor="#ffffff"
       glarePosition="all"
       glareBorderRadius="8px"
-      tiltMaxAngleX={5}
-      tiltMaxAngleY={5}
+      tiltMaxAngleX={12}
+      tiltMaxAngleY={12}
       className={className}
     >
       {children}

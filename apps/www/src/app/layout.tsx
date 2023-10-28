@@ -1,13 +1,14 @@
 import "~/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 
 import { meta } from "@bricesuazo/constant/config";
 
-import { TRPCReactProvider } from "./providers";
+import { Nav } from "~/components/elements/client/nav";
+import { ThemeProvider, TRPCReactProvider } from "./providers";
 
 // export const runtime = "edge";
 
@@ -18,9 +19,9 @@ import { TRPCReactProvider } from "./providers";
  */
 export const dynamic = "force-dynamic";
 
-const fontSans = Inter({
+const font = Poppins({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -63,11 +64,16 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={["font-sans", fontSans.variable].join(" ")}>
-        <TRPCReactProvider headers={headers()}>
-          <Analytics />
-          {props.children}
-        </TRPCReactProvider>
+      <body className={font.className}>
+        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+          <TRPCReactProvider headers={headers()}>
+            <Nav />
+            <main className="flex flex-col px-6 antialiased">
+              {props.children}
+            </main>
+            <Analytics />
+          </TRPCReactProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

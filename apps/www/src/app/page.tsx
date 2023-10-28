@@ -26,8 +26,14 @@ export default function HomePage() {
     <>
       <div className="before:bg-grid-[#000] dark:before:bg-grid-[#fff] bg-cover bg-fixed bg-right before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5">
         <div className="bg-main-gradient pointer-events-none absolute -top-1/2 bottom-0 left-0 right-0 z-[-1] bg-contain blur-[160px] will-change-contents"></div>
-        <div className="move-area mx-auto -mt-24 flex min-h-screen flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
-          <div className="md:grid-cols-0 grid lg:grid-cols-5">
+        <div className="mx-auto flex min-h-[calc(100vh-6rem)] flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
+          <div className="md:grid-cols-0 grid items-center gap-x-8 md:grid-cols-6">
+            <div className="f-full col-span-3 hidden md:flex">
+              <GlowEffect className="z-10 aspect-square w-full">
+                <Image src="/assets/logo.png" alt="Logo" fill />
+                {/* <CodeCard userData={userData} contributions={contributions} /> */}
+              </GlowEffect>
+            </div>
             <div className="md:col-span-3">
               <h1 className="dark:color-black relative mx-0 mb-0 mt-0 text-center text-[51px] font-black tracking-[-0.03em] text-gray-800 duration-300 dark:text-white md:text-left md:text-[55px] lg:text-[67px] xl:text-[75px]">
                 {header.title}
@@ -67,13 +73,6 @@ export default function HomePage() {
                   </>
                 </Link>
               </div>
-            </div>
-
-            <div className="hidden items-center motion-reduce:transition-none md:col-span-3 md:-mb-7 md:mt-7 md:flex lg:col-span-2 lg:mb-0 lg:mt-0">
-              <GlowEffect className="z-10 block w-full">
-                test
-                {/* <CodeCard userData={userData} contributions={contributions} /> */}
-              </GlowEffect>
             </div>
           </div>
         </div>
@@ -181,12 +180,12 @@ export default function HomePage() {
           <span className="absolute -bottom-7 left-0 z-[-1] fill-black/40 dark:fill-neutral-800">
             <Dots h="70" w="134" />
           </span>
-          <Image
+          {/* <Image
             src="/assets/svg/sparkles.svg"
             alt="sparkles"
             fill
             className="hide pointer-events-none m-[0_auto] animate-pulse"
-          />
+          /> */}
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             About me
             <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
@@ -340,12 +339,12 @@ export default function HomePage() {
       <section id={"contact"}>
         <div className="h-full scroll-mt-20 py-36 pt-24 lg:px-36">
           <header>
-            <Image
+            {/* <Image
               src="/assets/svg/sparkles.svg"
               alt="sparkles"
               fill
               className="hide pointer-events-none m-[0_auto] animate-pulse"
-            />
+            /> */}
             <h3 className="m-6 mb-2 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
               Contact me
               <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
