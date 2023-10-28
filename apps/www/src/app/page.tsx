@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { StarIcon, UsersIcon } from "lucide-react";
@@ -15,10 +17,15 @@ import { cn } from "@bricesuazo/ui/utils";
 import Dots from "~/components/decorations/dots";
 import { Contact } from "~/components/elements/client/contact";
 import { GlowEffect } from "~/components/elements/client/glow-effect";
+import {
+  RepoCard,
+  RepoCardSkeleton,
+} from "~/components/elements/client/repo-card";
+import { api } from "~/utils/api";
 
 export default function HomePage() {
-  // const repos = await GetPopular();
-  // const reposData = repos.repositories.edges;
+  const { data: repos } = api.www.getPopularRepos.useQuery();
+  const reposData = repos?.user.repositories.edges;
   // const userData = await GetUserData();
   // const contributions = await getTotalContributionsForYears();
 
@@ -189,7 +196,7 @@ export default function HomePage() {
             src="/assets/svg/sparkles.svg"
             alt="sparkles"
             fill
-            className="hide pointer-events-none m-[0_auto] animate-pulse"
+            className="hide pointer-events-none -z-10 m-[0_auto] animate-pulse"
           />
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             About me
@@ -201,13 +208,13 @@ export default function HomePage() {
           <div className="mx-auto max-w-screen-sm space-y-4 text-center">
             <p>
               I have been coding for more than 5 years. I started my journey at
-              the end of 2018.
+              2018.
             </p>
             <p>
               At first, I learned Java, MySQL, HTML, and CSS to build websites
             </p>
             <p>
-              In Ocotber 2021, I started learning React.js, and soon Next.js. I
+              In October 2021, I started learning React.js, and soon Next.js. I
               fell in love with this technology and I am now using it
               proffesionally.
             </p>
@@ -238,17 +245,21 @@ export default function HomePage() {
           </h3>
           <div className="relative">
             <div className="xl-grid-cols-4 mb-8 grid grid-cols-1 gap-x-6 gap-y-10 pb-4 text-center text-gray-800 dark:text-white md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
-              {/* {reposData &&
-                reposData.map((repo) => {
-                  return repo.node.owner.login == "BriceSuazo" ? (
-                    <RepoCard key={repo.node.id} {...repo.node} />
-                  ) : null;
-                })} */}
+              {!reposData
+                ? [...Array(3).keys()].map((index) => (
+                    <RepoCardSkeleton key={index} />
+                  ))
+                : reposData.map((repo) => {
+                    return repo.node.owner.login ==
+                      meta.accounts.github.username ? (
+                      <RepoCard key={repo.node.id} {...repo.node} />
+                    ) : null;
+                  })}
             </div>
-            <div className="pointer-events-visible section-fade absolute inset-x-0 bottom-0 z-20 flex pb-8 pt-32 duration-300">
+            <div className="pointer-events-visible section-fade absolute inset-x-0 -bottom-8 z-20 flex duration-300">
               <div className="flex flex-1 flex-col items-center justify-center duration-200 motion-reduce:transition-none">
                 <Link
-                  className="arrow link group pointer-events-auto relative mt-5 inline-block items-center justify-center p-2 pb-1 pl-0 pr-0 font-semibold duration-200 motion-reduce:transition-none"
+                  className="arrow link group pointer-events-auto relative inline-block items-center justify-center font-semibold duration-200 motion-reduce:transition-none"
                   href="/repositories"
                 >
                   <>
@@ -346,7 +357,7 @@ export default function HomePage() {
               src="/assets/svg/sparkles.svg"
               alt="sparkles"
               fill
-              className="hide pointer-events-none m-[0_auto] animate-pulse"
+              className="hide pointer-events-none m-[0_auto] animate-pulse -z-10"
             /> */}
             <h3 className="m-6 mb-2 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
               Contact me

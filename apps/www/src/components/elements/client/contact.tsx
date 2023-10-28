@@ -146,7 +146,7 @@ export function Contact() {
         {sendMessageMutation.isSuccess && (
           <p className="flex items-center self-start text-green-500">
             <CheckCircleIcon className="mr-1 h-4 w-4" />
-            Message sent!
+            Message sent! I&apos;ll get back to you as soon as possible.
           </p>
         )}
         {sendMessageMutation.isError && (
@@ -159,6 +159,7 @@ export function Contact() {
           <button
             className="group ml-auto mt-2 flex w-fit rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 duration-200 hover:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none dark:bg-white/[10%] dark:text-white dark:hover:bg-white/[15%]"
             type="submit"
+            disabled={sendMessageMutation.isLoading}
           >
             {sendMessageMutation.isLoading ? (
               <>

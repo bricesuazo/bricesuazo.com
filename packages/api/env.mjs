@@ -9,6 +9,7 @@ export const env = createEnv({
    */
   server: {
     DISCORD_WEBHOOK_URL: z.string().url(),
+    GITHUB_ACCESS_TOKEN: z.string(),
   },
   /**
    * Specify your client-side environment variables schema here.
@@ -22,6 +23,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     DISCORD_WEBHOOK_URL: process.env.DISCORD_WEBHOOK_URL,
+    GITHUB_ACCESS_TOKEN: process.env.GITHUB_ACCESS_TOKEN,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   skipValidation: !!process.env.CI || !!process.env.SKIP_ENV_VALIDATION,

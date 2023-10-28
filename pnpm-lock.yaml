@@ -138,9 +138,15 @@ importers:
       '@bricesuazo/auth':
         specifier: 0.0.0
         version: link:../auth
+      '@bricesuazo/constant':
+        specifier: 0.0.0
+        version: link:../constant
       '@bricesuazo/db':
         specifier: 0.0.0
         version: link:../db
+      '@t3-oss/env-nextjs':
+        specifier: ^0.7.1
+        version: registry.npmjs.org/@t3-oss/env-nextjs@0.7.1(typescript@5.2.2)(zod@3.22.4)
       '@trpc/client':
         specifier: ^10.40.0
         version: registry.npmjs.org/@trpc/client@10.43.0(@trpc/server@10.43.0)
