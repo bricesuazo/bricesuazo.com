@@ -1,0 +1,35 @@
+{
+  "name": "@bricesuazo/api",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bricesuazo/auth": "0.0.0",
+    "@bricesuazo/db": "0.0.0",
+    "@trpc/client": "^10.40.0",
+    "@trpc/server": "^10.40.0",
+    "superjson": "1.13.1",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@bricesuazo/eslint-config": "0.0.0",
+    "@bricesuazo/prettier-config": "0.0.0",
+    "@bricesuazo/tsconfig": "0.0.0",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@bricesuazo/eslint-config/base"
+    ]
+  },
+  "prettier": "@bricesuazo/prettier-config"
+}
