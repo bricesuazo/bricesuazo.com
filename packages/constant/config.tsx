@@ -15,6 +15,9 @@ export const meta = {
     twitter: {
       username: "@brice_suazo",
     },
+    youtube: {
+      username: "bricesuazo",
+    },
     discord: {
       username: "BriceSuazo#9558",
       invite: "https://discord.gg/S6DunwdpqV",
@@ -42,22 +45,23 @@ export const nav = {
       title: "Home",
     },
     {
-      href: "/repositories/",
       title: "My work",
+      href: "/repositories",
     },
     {
-      href: "/blog/",
-      title: "Blog",
+      title: "Motion Graphics",
+      href: "/motion",
     },
   ],
   right: [
     {
-      href: "/photography/",
-      title: "Photography",
+      href: `https://github.com/${meta.accounts.github.username}`,
+      title: "Github",
+      target: "_blank",
     },
     {
-      href: meta.accounts.discord.invite,
-      title: "Discord",
+      href: `https://link.bricesuazo.com`,
+      title: "Links",
       target: "_blank",
     },
   ],
@@ -238,7 +242,17 @@ export const contact = {
   ],
 };
 
-export const footer = {
+interface Footer {
+  categories: {
+    title: string;
+    links: {
+      title: string;
+      href: string;
+      target?: string;
+    }[];
+  }[];
+}
+export const footer: Footer = {
   categories: [
     {
       title: "Important Links",
@@ -252,12 +266,8 @@ export const footer = {
           href: "/repositories",
         },
         {
-          title: "Blog",
-          href: "/blog",
-        },
-        {
-          title: "Photography",
-          href: "/photography",
+          title: "Motion Graphics",
+          href: "/motion",
         },
       ],
     },
@@ -270,14 +280,18 @@ export const footer = {
           target: "_blank",
         },
         {
-          title: "Instagram",
-          href: `https://instagram.com/${meta.accounts.instagram.username}`,
+          title: "X",
+          href: `https://x.com/${meta.accounts.twitter.username}`,
           target: "_blank",
         },
-
         {
           title: "Discord",
           href: meta.accounts.discord.invite,
+          target: "_blank",
+        },
+        {
+          title: "YouTube",
+          href: `https://www.youtube.com/${meta.accounts.youtube.username}`,
           target: "_blank",
         },
       ],
@@ -286,7 +300,7 @@ export const footer = {
       title: "Other",
       links: [
         {
-          title: "What i use",
+          title: "What I use",
           href: "/uses",
         },
         {
@@ -305,15 +319,48 @@ export const technologies = [
     link: "https://reactjs.org/",
   },
   {
+    name: "React Native",
+    icon: "/assets/tech/react.svg",
+    link: "https://reactnative.dev/",
+  },
+  {
     name: "Next.js",
     icon: "/assets/tech/next.svg",
     class: "invert-0 dark:invert",
     link: "https://nextjs.org/",
   },
   {
+    name: "Turborepo",
+    icon: "/assets/tech/turborepo.svg",
+    link: "https://turbo.build/",
+  },
+  {
+    name: "Expo",
+    icon: "/assets/tech/expo.svg",
+    link: "https://expo.dev/",
+    class: "dark:invert invert-0",
+  },
+  {
     name: "TailwindCSS",
     icon: "/assets/tech/tailwindcss.svg",
     link: "https://tailwindcss.com/",
+  },
+  {
+    name: "Firebase",
+    icon: "/assets/tech/firebase.svg",
+    link: "https://firebase.google.com/",
+  },
+  {
+    name: "PlanetScale",
+    icon: "/assets/tech/planetscale.svg",
+    link: "https://planetscale.com/",
+    class: "dark:invert invert-0",
+  },
+  {
+    name: "Vercel",
+    icon: "/assets/tech/vercel.svg",
+    class: "invert-0 dark:invert",
+    link: "https://vercel.com/",
   },
   {
     name: "Javascript",
@@ -325,15 +372,30 @@ export const technologies = [
     link: "https://www.typescriptlang.org/",
   },
   {
+    name: "tRPC",
+    icon: "/assets/tech/trpc.svg",
+    link: "https://trpc.io/",
+  },
+  {
     name: "Node.js",
     icon: "/assets/tech/nodejs.svg",
     link: "https://nodejs.org/",
   },
   {
-    name: "Express.js",
-    icon: "/assets/tech/express.svg",
-    class: "invert-0 dark:invert",
-    link: "https://expressjs.com/",
+    name: "Auth.js",
+    icon: "/assets/tech/authjs.svg",
+    link: "https://authjs.dev/",
+  },
+  {
+    name: "Prisma ORM",
+    icon: "/assets/tech/prisma.svg",
+    link: "https://www.prisma.io/",
+    class: "dark:invert invert-0",
+  },
+  {
+    name: "Drizzle ORM",
+    icon: "/assets/tech/drizzle.svg",
+    link: "https://orm.drizzle.team/",
   },
   {
     name: "NPM",
@@ -357,71 +419,26 @@ export const technologies = [
     link: "https://github.com",
   },
   {
-    name: "GraphQL",
-    icon: "/assets/tech/graphql.svg",
-    link: "https://graphql.org/",
+    name: "MySQL",
+    icon: "/assets/tech/mysql.svg",
+    link: "https://www.mysql.com/",
+  },
+  {
+    name: "PosgreSQL",
+    icon: "/assets/tech/posgresql.svg",
+    link: "https://www.postgresql.org",
+  },
+  {
+    name: "Supabase",
+    icon: "/assets/tech/supabase.svg",
+    link: "https://supabase.com",
   },
   {
     name: "Figma",
     icon: "/assets/tech/figma.svg",
     link: "https://figma.com/",
   },
-  {
-    name: "Webpack",
-    icon: "/assets/tech/webpack.svg",
-    link: "https://webpack.js.org/",
-  },
-  {
-    name: "Turborepo",
-    icon: "/assets/tech/turborepo.svg",
-    link: "https://turbo.build/",
-  },
-  {
-    name: "Deno",
-    icon: "/assets/tech/deno.svg",
-    link: "https://deno.land/",
-  },
-  {
-    name: "C++",
-    icon: "/assets/tech/cpp.svg",
-  },
-  {
-    name: "MySQL",
-    icon: "/assets/tech/mysql.svg",
-    link: "https://www.mysql.com/",
-  },
-  {
-    name: "MongoDB",
-    icon: "/assets/tech/mongodb.svg",
-    link: "https://www.mongodb.com/",
-  },
-  {
-    name: "Discord.js",
-    icon: "/assets/tech/discordjs.svg",
-    link: "https://discord.js.org/",
-  },
-  {
-    name: "Rollup",
-    icon: "/assets/tech/rollup.svg",
-    link: "https://rollupjs.org/",
-  },
-  {
-    name: "Docker",
-    icon: "/assets/tech/docker.svg",
-    link: "https://www.docker.com/",
-  },
-  {
-    name: "Vercel",
-    icon: "/assets/tech/vercel.svg",
-    class: "invert-0 dark:invert",
-    link: "https://vercel.com/",
-  },
-  {
-    name: "Astro",
-    icon: "/assets/tech/astro.svg",
-    class: "invert-0 dark:invert",
-    link: "https://astro.build/",
-  },
+
   {
     name: "ESlint",
     icon: "/assets/tech/eslint.svg",

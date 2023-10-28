@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"/>
+<g transform="matrix(1 0 0 1 540 540)" id="80cd0534-ff79-41df-8c99-6b9a8612899d">
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="e5b536c1-a44a-4908-afe1-a13359aa437b">
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-540" y="-540" rx="0" ry="0" width="1080" height="1080"/>
+</g>
+<g transform="matrix(4.86 0 0 4.86 539.67 539.6)">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(18,58,80); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-102.53, -375.01)" d="M 101.38 265.85 C 107.40979455005869 263.6496568713873 114.11557592480918 266.4768177893042 116.75 272.33000000000004 Q 154.48 352.52 192 432.8 C 195.07 439.40000000000003 191.17 448.08 184.07 449.93 Q 126.58 467.08 69 484.17 C 64.35317426093586 485.83078067761784 59.16623387760501 484.7018355380896 55.629999999999995 481.26 C 53.51806647871456 478.622046140875 51.599726931234926 475.83477230359625 49.89000000000001 472.92 Q 32.05 445.1 14.22 417.27 C 11.385760167834714 413.18947899033816 11.255958127639657 407.8125278101368 13.890000000000002 403.59999999999997 Q 54.3 337.74 94.78 271.94 C 96.38 269.38 98.42 266.86 101.38 265.85 M 106.69 295 Q 89.11 379.16 71.81 463.36 C 70.46000000000001 466.88 74.59 469.97 77.81 468.3 C 110.14 458.7 142.48000000000002 449.15000000000003 174.81 439.43 C 176.2410241617862 439.1244062943274 177.439173945958 438.152026129367 178.03273791201758 436.8145286591794 C 178.6263018780772 435.4770311889918 178.54349235757115 433.93617795982533 177.81 432.67 C 156.27 385.99 134.15 339.55 112.61 292.87 C 110.47 291.94 107.02 292.11 106.73 295.02 Z" stroke-linecap="round"/>
+</g>
+</svg>

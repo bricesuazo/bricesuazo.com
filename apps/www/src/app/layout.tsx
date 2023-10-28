@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { meta } from "@bricesuazo/constant/config";
 import { cn } from "@bricesuazo/ui/utils";
 
+import { Footer } from "~/components/elements/client/footer";
 import { Header } from "~/components/elements/client/header";
 import { ThemeProvider, TRPCReactProvider } from "./providers";
 
@@ -77,6 +78,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <main className="flex flex-col px-6 antialiased">
               {props.children}
             </main>
+            <Footer />
             <Analytics />
           </TRPCReactProvider>
         </ThemeProvider>

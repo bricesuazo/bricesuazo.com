@@ -2,15 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MonitorDotIcon, SettingsIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  ExternalLinkIcon,
+  MonitorDotIcon,
+  SettingsIcon,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { meta, nav } from "@bricesuazo/constant/config";
 import { Button } from "@bricesuazo/ui/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -22,53 +29,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@bricesuazo/ui/ui/select";
-import { cn } from "@bricesuazo/ui/utils";
 
 import MobileNav from "./mobile-nav";
 
-function HeaderItem({
-  href,
-  text,
-  target,
-}: {
-  href: string;
-  text: string;
-  target?: string;
-}) {
-  const path = usePathname();
-  let isActive = path.split("/")[1]?.trim() === href.split("/")[1]?.trim();
-  if (href.startsWith("https://") || href.startsWith("http://")) {
-    isActive = false;
-    target = "_blank";
-  }
-  return (
-    <Button
-      asChild
-      variant={isActive ? "secondary" : "ghost"}
-      className="hidden md:block"
-    >
-      <Link href={href} key={href} target={target}>
-        {text}
-        {target && (target === "_blank" || target === "_external") ? (
-          <svg
-            aria-hidden="true"
-            className="absolute right-0 top-2 fill-black opacity-50 dark:fill-white"
-            height="7"
-            viewBox="0 0 6 6"
-            width="7"
-          >
-            <path
-              d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
-              fill="var(--accents-3)"
-            ></path>
-          </svg>
-        ) : null}
-      </Link>
-    </Button>
-  );
-}
-
 export function Header() {
+  const path = usePathname();
   const { setTheme, theme } = useTheme();
   return (
     <nav key="nav" className="fixed top-0 z-50 w-full shadow dark:shadow-2xl">
@@ -83,20 +48,45 @@ export function Header() {
         <MobileNav />
         <div className="mr-auto flex gap-2">
           {nav.left.map((item, index) => {
+            let isActive =
+              path.split("/")[1]?.trim() === item.href.split("/")[1]?.trim();
+            if (
+              item.href.startsWith("https://") ||
+              item.href.startsWith("http://")
+            ) {
+              isActive = false;
+            }
             return (
-              <HeaderItem key={index} href={item.href} text={item.title} />
+              <Button
+                key={index}
+                asChild
+                variant={isActive ? "secondary" : "ghost"}
+                className="hidden md:block"
+              >
+                <Link href={item.href} key={item.href}>
+                  {item.title}
+                </Link>
+              </Button>
             );
           })}
         </div>
-        <div className="ml-auto flex gap-1">
+        <div className="ml-auto flex">
           {nav.right.map((item, index) => {
             return (
-              <HeaderItem
+              <Button
                 key={index}
-                href={item.href}
-                text={item.title}
-                target={item.target}
-              />
+                asChild
+                variant="link"
+                className="group hidden gap-x-2 p-2 text-muted-foreground transition hover:text-white md:inline-flex"
+              >
+                <Link href={item.href} key={item.href} target={item.target}>
+                  {item.title}{" "}
+                  <ExternalLinkIcon
+                    size="0.75rem"
+                    className="opacity-0 group-hover:opacity-100"
+                  />
+                </Link>
+              </Button>
             );
           })}
           <Dialog>
@@ -137,6 +127,33 @@ export function Header() {
                   </SelectContent>
                 </Select>
               </div>
+              <DialogFooter>
+                <div className="flex w-full items-center justify-between">
+                  <Button
+                    variant="link"
+                    size="sm"
+                    className="text-muted-foreground transition hover:text-white"
+                    asChild
+                  >
+                    <Link
+                      href="https://github.com/bricesuazo/bricesuazo.com"
+                      target="_blank"
+                    >
+                      Source Code{" "}
+                      <ExternalLinkIcon size="0.75rem" className="ml-1" />
+                    </Link>
+                  </Button>
+                  <DialogClose asChild>
+                    <Button variant="secondary" className="group">
+                      Close{" "}
+                      <ArrowRightIcon
+                        size="1rem"
+                        className="ml-1 transition group-hover:translate-x-1"
+                      />
+                    </Button>
+                  </DialogClose>
+                </div>
+              </DialogFooter>
             </DialogContent>
           </Dialog>
         </div>

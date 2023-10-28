@@ -14,6 +14,7 @@ export const env = createEnv({
    * built with invalid env vars.
    */
   server: {
+    VERSION: z.string().min(1),
     DATABASE_URL: z.string().url(),
   },
   /**
@@ -30,6 +31,7 @@ export const env = createEnv({
     VERCEL_URL: process.env.VERCEL_URL,
     PORT: process.env.PORT,
     DATABASE_URL: process.env.DATABASE_URL,
+    VERSION: process.env.VERSION,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   skipValidation:

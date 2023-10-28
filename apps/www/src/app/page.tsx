@@ -244,7 +244,7 @@ export default function HomePage() {
             <div className="xl-grid-cols-4 mb-8 grid grid-cols-1 gap-x-6 gap-y-10 pb-4 text-center text-gray-800 dark:text-white md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
               {/* {reposData &&
                 reposData.map((repo) => {
-                  return repo.node.owner.login == "IgorKowalczyk" ? (
+                  return repo.node.owner.login == "BriceSuazo" ? (
                     <RepoCard key={repo.node.id} {...repo.node} />
                   ) : null;
                 })} */}
