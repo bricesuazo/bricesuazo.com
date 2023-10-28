@@ -24,9 +24,9 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="before:bg-grid-[#000] dark:before:bg-grid-[#fff] bg-cover bg-fixed bg-right before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5">
+      <div className="bg-cover bg-fixed bg-right before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5 before:bg-grid-[#000] dark:before:bg-grid-[#fff]">
         <div className="bg-main-gradient pointer-events-none absolute -top-1/2 bottom-0 left-0 right-0 z-[-1] bg-contain blur-[160px] will-change-contents"></div>
-        <div className="mx-auto flex min-h-[calc(100vh-6rem)] flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
+        <div className="mx-auto flex min-h-screen flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
           <div className="md:grid-cols-0 grid items-center gap-x-8 md:grid-cols-5">
             <div className="f-full col-span-2 hidden md:flex">
               <GlowEffect className="z-10">
@@ -35,12 +35,13 @@ export default function HomePage() {
                   alt="Logo"
                   width={500}
                   height={500}
+                  className="invert dark:invert-0"
                 />
                 {/* <CodeCard userData={userData} contributions={contributions} /> */}
               </GlowEffect>
             </div>
             <div className="md:col-span-3">
-              <h1 className="dark:color-black relative mx-0 mb-0 mt-0 text-center text-[51px] font-black tracking-[-0.03em] text-gray-800 duration-300 dark:text-white md:text-left md:text-[55px] lg:text-[67px] xl:text-[75px]">
+              <h1 className="dark:color-black relative mx-0 mb-0 mt-0 text-center text-[51px] font-bold tracking-tight text-gray-800 duration-300 dark:text-white md:text-left md:text-[55px] lg:text-[67px] xl:text-[75px]">
                 {header.title}
               </h1>
               <h2 className="text-center text-[1.5rem] font-semibold opacity-80 md:text-left">
@@ -177,7 +178,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id={"about"} className="scroll-mt-20 pt-12 lg:px-24">
+      <section id="about" className="scroll-mt-20 pt-12 lg:px-24">
         <div className="relative mx-auto mb-7 text-center">
           <span className="absolute right-0 top-[90px] z-[-1] fill-black/40 dark:fill-neutral-800">
             <Dots h="107" w="134" />
@@ -185,12 +186,12 @@ export default function HomePage() {
           <span className="absolute -bottom-7 left-0 z-[-1] fill-black/40 dark:fill-neutral-800">
             <Dots h="70" w="134" />
           </span>
-          {/* <Image
+          <Image
             src="/assets/svg/sparkles.svg"
             alt="sparkles"
             fill
             className="hide pointer-events-none m-[0_auto] animate-pulse"
-          /> */}
+          />
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             About me
             <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
@@ -198,31 +199,32 @@ export default function HomePage() {
             </span>
           </h3>
 
-          <div className="prose dark:prose-dark m-auto px-6 text-center">
-            <span>
+          <div className="mx-auto max-w-screen-sm space-y-4 text-center">
+            <p>
               I have been coding for more than 5 years. I started my journey at
               the end of 2018.
-            </span>
-            <span>
-              At first, I learned HTML, CSS and base Javascript to build
-              websites
-            </span>
-            <span>
-              {" "}
-              My first project was a simple music player made with Javascript
-              (~January 2019).
-              <br />
-            </span>
-            <span>
-              {" "}
-              In March 2020, I started learning Node.js & Express.js, I also
-              created my first major project - Majo.exe.
-            </span>
-            <span>
-              {" "}
-              In April 2022, I started learning React.js, Next.js and
-              Tailwind.css
-            </span>
+            </p>
+            <p>
+              At first, I learned Java, MySQL, HTML, and CSS to build websites
+            </p>
+            <p>
+              In Ocotber 2021, I started learning React.js, and soon Next.js. I
+              fell in love with this technology and I am now using it
+              proffesionally.
+            </p>
+            <p>
+              In October 2022, I started working with my first SaaS company. It
+              is called{" "}
+              <Link
+                href="https://www.eboto-mo.com"
+                target="_blank"
+                className="text-primary hover:underline"
+              >
+                eBoto
+              </Link>
+              , it is a versatile web-based voting platform that offers secure
+              online elections for any type of organization.
+            </p>
           </div>
         </div>
       </section>

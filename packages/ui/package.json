@@ -1,19 +1,6 @@
 {
   "name": "@bricesuazo/ui",
   "version": "0.0.0",
-  "include": [
-    "."
-  ],
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ],
-  "exports": {
-    ".": "./index.ts",
-    "./ui/*": "./ui/*",
-    "./utils": "./utils.ts"
-  },
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint .",
