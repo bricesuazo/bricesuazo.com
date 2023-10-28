@@ -51,9 +51,8 @@ export default function HomePage() {
                 {header.description}
               </p>
               <div className="mt-4 flex justify-center md:block">
-                <Link
-                  href="/#about"
-                  scroll={false}
+                <a
+                  href="#additional-info"
                   className="arrow link group relative mt-5 inline-block items-center justify-center p-2 pb-1 pl-0 pr-0 font-semibold"
                 >
                   <>
@@ -77,14 +76,14 @@ export default function HomePage() {
                       ></path>
                     </svg>
                   </>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <section id={"additional-info"}>
+      <section id="additional-info">
         <div>
           <hr className="m-[0_auto] mb-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] px-8 duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
           <div className="m-[0_auto] mb-8 grid grid-cols-3 gap-x-6 gap-y-10 px-8 text-center text-gray-800/70 dark:text-white/70 md:grid-cols-4 md:gap-x-10 lg:grid-cols-4">

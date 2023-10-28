@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { ExternalLinkIcon } from "lucide-react";
 
 import { footer, meta } from "@bricesuazo/constant/config";
+import { Button } from "@bricesuazo/ui/ui/button";
 
 import { env } from "~/env.mjs";
 
@@ -26,10 +28,18 @@ export function Footer() {
 
             <p className="mt-3 text-gray-700 dark:text-neutral-300">
               Created with ❤️ and ☕ in Philippines using{" "}
-              <Link href="https://nextjs.org" target={"_blank"}>
+              <Link href="https://nextjs.org" target="_blank">
                 Next.js
               </Link>
             </p>
+            <Button variant="link" asChild className="mt-4 p-0">
+              <Link
+                href="https://github.com/bricesuazo/bricesuazo.com"
+                target="_blank"
+              >
+                Source Code <ExternalLinkIcon size="0.75rem" className="ml-1" />
+              </Link>
+            </Button>
           </div>
           {footer.categories.map((category, index) => (
             <div
