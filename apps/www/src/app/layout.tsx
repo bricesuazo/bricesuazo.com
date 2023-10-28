@@ -5,9 +5,11 @@ import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 
-import { meta } from "@bricesuazo/constant";
+import { meta } from "@bricesuazo/constant/config";
 
 import { TRPCReactProvider } from "./providers";
+
+// export const runtime = "edge";
 
 /**
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
