@@ -229,11 +229,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id={"repositories"} className="scroll-mt-20 pt-12 lg:px-24">
-        <div
-          className="before:bg-grid-[#000] before:gradient-mask-t-0 dark:before:bg-grid-[#fff] relative mx-auto before:absolute before:inset-0 before:z-[-1] before:bg-[length:22px_22px] before:bg-center before:bg-repeat-space before:opacity-10 dark:before:opacity-20"
-          id={"repositories"}
-        >
+      <section id="repositories" className="scroll-mt-20 pt-12 lg:px-24">
+        <div className="before:gradient-mask-t-0 relative mx-auto before:absolute before:inset-0 before:z-[-1] before:bg-[length:22px_22px] before:bg-center before:bg-repeat-space before:opacity-10 before:bg-grid-[#000] dark:before:opacity-20 dark:before:bg-grid-[#fff]">
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             Most Popular Projects
             <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
@@ -343,7 +340,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section id={"contact"}>
+      <section id="contact">
         <div className="h-full scroll-mt-20 py-36 pt-24 lg:px-36">
           <header>
             {/* <Image

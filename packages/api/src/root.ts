@@ -1,10 +1,8 @@
-import { authRouter } from "./router/auth";
-import { postRouter } from "./router/post";
+import { wwwRouter } from "./router/www";
 import { createTRPCRouter } from "./trpc";
 
 export const appRouter = createTRPCRouter({
-  auth: authRouter,
-  post: postRouter,
+  www: wwwRouter,
 });
 
 // export type definition of API
