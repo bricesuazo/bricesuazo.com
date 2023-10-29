@@ -77,13 +77,13 @@ export function Header() {
                 key={index}
                 asChild
                 variant="link"
-                className="group hidden gap-x-2 p-2 text-muted-foreground transition hover:text-secondary-foreground dark:hover:text-white md:inline-flex"
+                className="group hidden gap-x-2 p-2 text-muted-foreground hover:text-secondary-foreground md:inline-flex"
               >
                 <Link href={item.href} key={item.href} target={item.target}>
                   {item.title}{" "}
                   <ExternalLinkIcon
                     size="0.75rem"
-                    className="opacity-0 transition group-hover:opacity-100"
+                    className="opacity-0 group-hover:opacity-100"
                   />
                 </Link>
               </Button>

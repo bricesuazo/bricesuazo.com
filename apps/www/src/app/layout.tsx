@@ -66,12 +66,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          font.className,
-          "bg-[linear-gradient(180deg,_rgb(255,255,255)_84%,rgb(233,243,255)_100%)] dark:bg-[linear-gradient(180deg,_rgb(16,17,16)_84%,rgb(22,22,23)_100%)]",
-        )}
-      >
+      <body className={cn(font.className)}>
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           <TRPCReactProvider headers={headers()}>
             <Header />

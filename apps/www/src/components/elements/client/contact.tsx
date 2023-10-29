@@ -2,10 +2,16 @@
 
 // import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertTriangleIcon, CheckCircleIcon, Loader2 } from "lucide-react";
+import {
+  AlertTriangleIcon,
+  ArrowRightIcon,
+  CheckCircleIcon,
+  Loader2,
+} from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { Button } from "@bricesuazo/ui/ui/button";
 import {
   Form,
   FormControl,
@@ -59,7 +65,7 @@ export function Contact() {
         )}
         className="relative flex w-full flex-col items-center justify-center gap-4"
       >
-        <div className="flex w-full gap-x-2">
+        <div className="flex w-full flex-col gap-4 sm:flex-row md:flex-col lg:flex-row">
           <FormField
             control={form.control}
             name="name"
@@ -155,37 +161,24 @@ export function Contact() {
             {sendMessageMutation.error.message}
           </p>
         )}
-        <div className="w-full py-2">
-          <button
-            className="group ml-auto mt-2 flex w-fit rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 duration-200 hover:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none dark:bg-white/[10%] dark:text-white dark:hover:bg-white/[15%]"
-            type="submit"
-            disabled={sendMessageMutation.isLoading}
-          >
-            {sendMessageMutation.isLoading ? (
-              <>
-                Sending
-                <Loader2 className="ml-2 mt-[2px] h-4 w-4 animate-spin duration-200 motion-reduce:transition-none" />
-              </>
-            ) : (
-              <>
-                Send
-                <svg
-                  className="ml-2 mt-[2px] h-4 w-4 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </>
-            )}
-          </button>
-        </div>
+
+        <Button
+          className="ml-auto"
+          type="submit"
+          disabled={sendMessageMutation.isLoading}
+        >
+          {sendMessageMutation.isLoading ? (
+            <>
+              Sending
+              <Loader2 size="1rem" className="ml-2 animate-spin" />
+            </>
+          ) : (
+            <>
+              Send
+              <ArrowRightIcon size="1rem" className="ml-2" />
+            </>
+          )}
+        </Button>
       </form>
     </Form>
   );

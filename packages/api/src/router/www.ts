@@ -168,7 +168,7 @@ export const wwwRouter = createTRPCRouter({
             isFork: false
             isLocked: false
             privacy: PUBLIC
-            first: 3
+            first: 6
             orderBy: {field: STARGAZERS, direction: DESC}
             ownerAffiliations: OWNER
           ) {
@@ -213,7 +213,7 @@ export const wwwRouter = createTRPCRouter({
                 owner: z.object({
                   login: z.string(),
                 }),
-                description: z.string(),
+                description: z.string().nullable(),
                 isArchived: z.boolean(),
                 forkCount: z.number(),
                 id: z.string(),

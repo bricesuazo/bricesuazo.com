@@ -55,13 +55,13 @@ export default function HomePage() {
               </GlowEffect>
             </div>
             <div className="md:col-span-3">
-              <h1 className="dark:color-black relative mx-0 mb-0 mt-0 text-center text-[51px] font-bold tracking-tight text-gray-800 duration-300 dark:text-white md:text-left md:text-[55px] lg:text-[67px] xl:text-[75px]">
+              <h1 className="relative text-center text-4xl font-bold leading-snug tracking-tight text-secondary-foreground duration-300 md:text-left md:text-5xl lg:text-6xl xl:text-8xl">
                 {header.title}
               </h1>
-              <h2 className="text-center text-[1.5rem] font-semibold opacity-80 md:text-left">
+              <h2 className="text-center text-[1.5rem] font-semibold text-secondary-foreground opacity-80 md:text-left">
                 {header.subtitle}
               </h2>
-              <p className="mt-2 text-center text-gray-700 dark:text-neutral-400 md:w-3/4 md:text-left">
+              <p className="mt-2 text-center text-muted-foreground md:w-3/4 md:text-left">
                 {header.description}
               </p>
               <div className="mt-4 flex justify-center md:block">
@@ -99,16 +99,16 @@ export default function HomePage() {
 
       <section id="additional-info">
         <div>
-          <hr className="m-[0_auto] mb-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] px-8 duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
-          <div className="m-[0_auto] mb-8 grid gap-x-6 gap-y-10 px-8 sm:grid-cols-2 lg:grid-cols-4">
+          <hr className="m-[0_auto] mb-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
+          <div className="m-[0_auto] mb-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             <Link
-              target="_blank"
-              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
               href={`https://github.com/${meta.accounts.github.username}`}
+              target="_blank"
+              className="group flex items-center justify-center text-center text-muted-foreground duration-200 hover:text-secondary-foreground motion-reduce:transition-none"
             >
               <>
                 <StarIcon
-                  className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
+                  className="-mt-1 mr-1 inline h-5 w-5 stroke-muted-foreground duration-200 group-hover:stroke-secondary-foreground motion-reduce:transition-none"
                   aria-hidden="true"
                   role="img"
                 />{" "}
@@ -121,12 +121,12 @@ export default function HomePage() {
 
             <Link
               target="_blank"
-              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              className="group flex items-center justify-center text-center text-muted-foreground duration-200 hover:text-secondary-foreground motion-reduce:transition-none"
               href={`https://github.com/${meta.accounts.github.username}`}
             >
               <>
                 <svg
-                  className="mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
+                  className="mr-1 inline h-5 w-5 fill-muted-foreground duration-200 group-hover:fill-secondary-foreground motion-reduce:transition-none"
                   aria-hidden="true"
                   viewBox="0 0 16 16"
                 >
@@ -143,13 +143,13 @@ export default function HomePage() {
 
             <Link
               target="_blank"
-              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              className="group flex items-center justify-center text-center text-muted-foreground duration-200 hover:text-secondary-foreground motion-reduce:transition-none"
               href={`https://github.com/${meta.accounts.github.username}`}
             >
               <>
                 <svg
                   viewBox="0 0 32 32"
-                  className="-mt-[2px] mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
+                  className="-mt-1 mr-1 inline h-5 w-5 fill-muted-foreground duration-200 group-hover:fill-secondary-foreground motion-reduce:transition-none"
                   aria-hidden="true"
                   role="img"
                 >
@@ -166,13 +166,13 @@ export default function HomePage() {
             </Link>
 
             <Link
-              target="_blank"
-              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
               href={`https://github.com/${meta.accounts.github.username}?tab=followers`}
+              target="_blank"
+              className="group flex items-center justify-center text-center text-muted-foreground duration-200 hover:text-secondary-foreground motion-reduce:transition-none"
             >
               <>
                 <UsersIcon
-                  className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
+                  className="-mt-1 mr-1 inline h-5 w-5 stroke-muted-foreground duration-200 group-hover:stroke-secondary-foreground motion-reduce:transition-none"
                   aria-hidden="true"
                   role="img"
                 />{" "}
@@ -188,10 +188,10 @@ export default function HomePage() {
 
       <section id="about" className="scroll-mt-20 pt-12 lg:px-24">
         <div className="relative mx-auto mb-7 text-center">
-          <span className="absolute right-0 top-[90px] z-[-1] fill-black/40 dark:fill-neutral-800">
+          <span className="absolute right-0 top-[90px] z-[-1]">
             <Dots h="107" w="134" />
           </span>
-          <span className="absolute -bottom-7 left-0 z-[-1] fill-black/40 dark:fill-neutral-800">
+          <span className="absolute -bottom-7 left-0 z-[-1]">
             <Dots h="70" w="134" />
           </span>
           <Image
@@ -201,10 +201,7 @@ export default function HomePage() {
             className="hide pointer-events-none -z-10 m-[0_auto] animate-pulse"
           />
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
-            About me
-            <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
-              .
-            </span>
+            About me.
           </h3>
 
           <div className="mx-auto max-w-screen-sm space-y-4 text-center">
@@ -240,25 +237,26 @@ export default function HomePage() {
       <section id="repositories" className="scroll-mt-20 pt-12 lg:px-24">
         <div className="before:gradient-mask-t-0 relative mx-auto before:absolute before:inset-0 before:z-[-1] before:bg-[length:22px_22px] before:bg-center before:bg-repeat-space before:opacity-10 before:bg-grid-[#000] dark:before:opacity-20 dark:before:bg-grid-[#fff]">
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
-            Most Popular Projects
-            <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
-              .
-            </span>
+            Most Popular Projects.
           </h3>
           <div className="relative">
-            <div className="xl-grid-cols-4 mb-8 grid grid-cols-1 gap-x-6 gap-y-10 pb-4 text-center text-gray-800 dark:text-white md:grid-cols-2 md:gap-x-10 lg:grid-cols-3">
+            <div className="xl-grid-cols-4 mb-8 grid grid-cols-1 gap-8 pb-4 text-center md:grid-cols-2 lg:grid-cols-3">
               {!reposData
-                ? [...Array(3).keys()].map((index) => (
-                    <RepoCardSkeleton key={index} />
+                ? [...Array(6).keys()].map((key, index) => (
+                    <RepoCardSkeleton key={key} index={index} />
                   ))
-                : reposData.map((repo) => {
+                : reposData.map((repo, index) => {
                     return repo.node.owner.login ==
                       meta.accounts.github.username ? (
-                      <RepoCard key={repo.node.id} {...repo.node} />
+                      <RepoCard
+                        key={repo.node.id}
+                        repo={repo.node}
+                        order={index}
+                      />
                     ) : null;
                   })}
             </div>
-            <div className="pointer-events-visible section-fade absolute inset-x-0 -bottom-8 z-20 flex duration-300">
+            <div className="pointer-events-visible absolute inset-x-0 bottom-0 z-10 flex pt-32 shadow-[0_-10rem_6rem_-2rem_hsl(var(--background))_inset] duration-300 md:pt-80 md:shadow-[0_-12rem_6rem_-2rem_hsl(var(--background))_inset]">
               <div className="flex flex-1 flex-col items-center justify-center duration-200 motion-reduce:transition-none">
                 <Link
                   className="arrow link group pointer-events-auto relative inline-block items-center justify-center font-semibold duration-200 motion-reduce:transition-none"
@@ -293,18 +291,15 @@ export default function HomePage() {
       </section>
       <section id={"techs"} className="scroll-mt-20 pt-12 lg:px-24">
         <div className="relative mx-auto mb-7 text-center">
-          <span className="absolute right-0 top-[90px] z-[-1] fill-black/40 dark:fill-neutral-800">
+          <span className="absolute right-0 top-[90px] z-[-1]">
             <Dots h="107" w="134" />
           </span>
-          <span className="absolute -bottom-7 left-0 z-[-1] fill-black/40 dark:fill-neutral-800">
+          <span className="absolute -bottom-7 left-0 z-[-1]">
             <Dots h="70" w="134" />
           </span>
 
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
-            Technologies I use
-            <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
-              .
-            </span>
+            Technologies I use.
           </h3>
         </div>
         <div className="mt-6 grid h-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -315,7 +310,8 @@ export default function HomePage() {
                   <Link
                     href={tech.link}
                     target="_blank"
-                    className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border bg-gray-200/[25%] px-4 py-2 text-sm font-semibold text-blue-900 backdrop-blur-[9px] duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]"
+                    className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border px-4 py-2 text-sm font-semibold backdrop-blur-[9px] hover:bg-primary/10"
+                    prefetch={false}
                   >
                     <Image
                       className={cn(tech.class, "h-8 w-8 rounded-md")}
@@ -330,7 +326,7 @@ export default function HomePage() {
                 ) : (
                   <div
                     key={index}
-                    className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border bg-gray-200/[25%] px-4 py-2 text-sm font-semibold text-blue-900 backdrop-blur-[9px] duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]"
+                    className="relative mx-auto flex w-full cursor-pointer items-center justify-between rounded-xl border px-4 py-2 text-sm font-semibold backdrop-blur-[9px] hover:bg-primary/10"
                   >
                     <Image
                       className={cn(tech.class, "h-8 w-8 rounded-md")}
@@ -361,29 +357,29 @@ export default function HomePage() {
               fill
               className="hide pointer-events-none m-[0_auto] animate-pulse -z-10"
             /> */}
-            <h3 className="m-6 mb-2 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
-              Contact me
-              <span className="text-fill-transparent bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text dark:from-[#a2facf] dark:to-[#64acff]">
-                .
-              </span>
+            <h3 className="m-6 mb-2 text-center text-[35px] font-semibold tracking-[-0.03em] text-secondary-foreground duration-300 motion-reduce:transition-none md:text-[35px] lg:text-[37px] xl:text-[40px]">
+              Contact me.
             </h3>
-            <p className="pb-1 text-center text-base text-gray-700 dark:text-neutral-300">
+            <p className="pb-1 text-center text-base text-muted-foreground">
               Want to order a project? Or do you just want to stay in touch?
             </p>
           </header>
           <div className="relative">
-            <div className="relative mt-6 grid h-full w-full grid-cols-1 gap-6 divide-x divide-none dark:divide-none md:grid-cols-2 md:divide-gray-200 md:dark:divide-white/20">
-              <div className="relative m-[0_auto] mb-4 flex w-full max-w-screen-sm rounded-[10px] border-[1px] border-black/[15%] bg-white p-5 shadow-lg duration-200 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617]">
+            <div className="relative mt-6 grid h-full w-full grid-cols-1 gap-6 divide-x divide-none dark:divide-none md:grid-cols-2">
+              <div className="relative m-[0_auto] mb-4 flex w-full max-w-screen-sm rounded-[10px] border-[1px] bg-background p-5 shadow-lg duration-200 motion-reduce:transition-none">
                 <Contact />
               </div>
-              <div className="space-y-4 p-4">
-                <p className=" text-xl font-semibold">Or contact me with...</p>
+              <div className="space-y-4">
+                <p className="text-center text-xl font-semibold md:text-left">
+                  Or contact me with...
+                </p>
                 {contact.links.map((element, index) => (
                   <Link
-                    className="group ml-auto mt-2 flex h-12 w-full items-center gap-3 rounded-md border bg-gray-200/[25%] px-4 py-2 text-sm font-semibold text-blue-900 backdrop-blur-[9px] duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]"
+                    className="ml-auto mt-2 flex h-12 w-full items-center gap-3 rounded-md border bg-background px-4 py-2 text-sm font-semibold backdrop-blur-[9px] hover:bg-primary/10"
                     href={element.href}
                     key={index}
                     target="_blank"
+                    prefetch={false}
                   >
                     <>
                       {element.icon} {element.title}
@@ -391,10 +387,10 @@ export default function HomePage() {
                   </Link>
                 ))}
               </div>
-              <span className="absolute right-0 top-[90px] z-[-1] fill-black/40 dark:fill-neutral-800">
+              <span className="absolute right-0 top-[90px] z-[-1]">
                 <Dots h="107" w="134" />
               </span>
-              <span className="absolute -bottom-7 left-0 z-[-1] fill-black/40 dark:fill-neutral-800">
+              <span className="absolute -bottom-7 left-0 z-[-1]">
                 <Dots h="70" w="134" />
               </span>
             </div>

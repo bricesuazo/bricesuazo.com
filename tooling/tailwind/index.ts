@@ -85,6 +85,7 @@ export default {
         }),
       });
     }),
+    require("tailwind-gradient-mask-image"),
     require("tailwindcss-animate"),
   ],
 } satisfies Config;
