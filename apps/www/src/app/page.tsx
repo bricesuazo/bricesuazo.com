@@ -12,8 +12,6 @@ import {
 } from "@bricesuazo/constant/config";
 import { cn } from "@bricesuazo/ui/utils";
 
-// import { ConvertNumber } from "@bricesuazo/constant/lib/utils";
-
 import Dots from "~/components/decorations/dots";
 import { Contact } from "~/components/elements/client/contact";
 import { GlowEffect } from "~/components/elements/client/glow-effect";
@@ -23,10 +21,18 @@ import {
 } from "~/components/elements/client/repo-card";
 import { api } from "~/utils/api";
 
+const convertNumber = (number: number) => {
+  return Intl.NumberFormat("en-US", {
+    notation: "compact",
+    style: "decimal",
+    maximumFractionDigits: 2,
+  }).format(number);
+};
+
 export default function HomePage() {
   const { data: repos } = api.www.getPopularRepos.useQuery();
+  const { data: userData } = api.www.getGithubUserData.useQuery();
   const reposData = repos?.user.repositories.edges;
-  // const userData = await GetUserData();
   // const contributions = await getTotalContributionsForYears();
 
   return (
@@ -107,7 +113,7 @@ export default function HomePage() {
                     role="img"
                   />{" "}
                   <span>
-                    {/* {userData && ConvertNumber(userData.userStars)} Stars on */}
+                    {userData && convertNumber(userData.userStars)} Stars on
                     repositories
                   </span>
                 </>
@@ -131,7 +137,7 @@ export default function HomePage() {
                     ></path>
                   </svg>
                   <span>
-                    {/* {userData && ConvertNumber(contributions.total)} Commits */}
+                    {/* {userData && convertNumber(contributions.total)} Commits */}
                   </span>
                 </>
               </Link>
@@ -155,7 +161,7 @@ export default function HomePage() {
                     />
                   </svg>{" "}
                   <span>
-                    {/* {userData && ConvertNumber(userData.userForks)} Repositories */}
+                    {userData && convertNumber(userData.userForks)} Repositories
                     forks
                   </span>
                 </>
@@ -174,7 +180,7 @@ export default function HomePage() {
                     role="img"
                   />{" "}
                   <span>
-                    {/* {userData && ConvertNumber(userData.userFollowers)} Github */}
+                    {userData && convertNumber(userData.userFollowers)} Github
                     Followers
                   </span>
                 </>
@@ -263,7 +269,7 @@ export default function HomePage() {
                   href="/repositories"
                 >
                   <>
-                    See more repositories
+                    See more projects
                     <svg
                       className="arrowSymbol inline-block translate-x-[5px] duration-200 group-hover:translate-x-[10px] motion-reduce:transition-none"
                       width="16"
