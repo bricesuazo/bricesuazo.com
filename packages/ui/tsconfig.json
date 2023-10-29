@@ -1,0 +1,8 @@
+{
+  "extends": "@bricesuazo/tsconfig/base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "include": ["*.ts", "ui", "/utils"],
+  "exclude": ["node_modules"]
+}
