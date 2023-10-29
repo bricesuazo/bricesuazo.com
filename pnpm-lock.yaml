@@ -229,6 +229,10 @@ importers:
         version: registry.npmjs.org/typescript@5.2.2
 
   packages/constant:
+    dependencies:
+      '@t3-oss/env-nextjs':
+        specifier: ^0.7.1
+        version: registry.npmjs.org/@t3-oss/env-nextjs@0.7.1(typescript@5.2.2)(zod@3.22.4)
     devDependencies:
       '@bricesuazo/eslint-config':
         specifier: 0.0.0

@@ -1,69 +1,14 @@
 import { z } from "zod";
 
 import { meta } from "@bricesuazo/constant/config";
+import {
+  getTotalContributionsForYear,
+  getTotalYears,
+  requestGraphql,
+} from "@bricesuazo/constant/lib/utils";
 
 import { env } from "../../env.mjs";
 import { createTRPCRouter, publicProcedure } from "../trpc";
-import { requestGraphql } from "../utils";
-
-// async function getTotalContributionsForYears() {
-//   const results = [];
-//   let total = 0;
-//   const years = await getTotalYears();
-//   const since = years[years.length - 1];
-//   const to = 0;
-//   for (const year of years) {
-//     const totalContributions = await getTotalContributionsForYear(year);
-//     results.push({ year, totalContributions });
-//     total += totalContributions;
-//   }
-//   return { results, total, dates: { since, to } };
-// }
-
-// async function getTotalYears() {
-//   const { data } = (await requestGraphql(
-//     `
-//         query($username: String!) {
-//           user(login: $username) {
-//               contributionsCollection {
-//                 contributionYears
-//               }
-//             }
-//           }
-//         `,
-//     {
-//       username: meta.accounts.github.username,
-//     },
-//   )) as { data: unknown };
-//   return data.user.contributionsCollection.contributionYears;
-// }
-
-// export async function getTotalContributionsForYear(year) {
-//   const from = `${year}-01-01T00:00:00Z`;
-//   const to = `${year}-12-31T23:59:59Z`;
-
-//   const { data } = (await requestGraphql(
-//     `
-//   query($username: String!, $from: DateTime!, $to: DateTime!) {
-//     user(login: $username) {
-//       contributionsCollection(from: $from, to: $to) {
-//         contributionCalendar {
-//           totalContributions
-//         }
-//       }
-//     }
-//   }
-// `,
-//     {
-//       username: meta.accounts.github.username,
-//       from: from,
-//       to: to,
-//     },
-//   )) as { data: unknown };
-
-//   return data.user.contributionsCollection.contributionCalendar
-//     .totalContributions;
-// }
 
 export const wwwRouter = createTRPCRouter({
   sendMessage: publicProcedure
@@ -113,11 +58,18 @@ export const wwwRouter = createTRPCRouter({
         }),
       });
     }),
-  getTotalContributionsForYears: publicProcedure.query(() => {
-    console.log(
-      "🚀 ~ file: www.ts:59 ~ getTotalContributionsForYears:publicProcedure.query ~ meta.accounts.github.username",
-      meta.accounts.github.username,
-    );
+  getTotalContributionsForYears: publicProcedure.query(async () => {
+    const results = [];
+    let total = 0;
+    const years = await getTotalYears();
+    const since = years[years.length - 1];
+    const to = 0;
+    for (const year of years) {
+      const totalContributions = await getTotalContributionsForYear(year);
+      results.push({ year, totalContributions });
+      total += totalContributions;
+    }
+    return { results, total, dates: { since, to } };
   }),
   getGithubUserData: publicProcedure.query(async () => {
     const { data } = (await requestGraphql(
@@ -159,11 +111,6 @@ export const wwwRouter = createTRPCRouter({
         username: meta.accounts.github.username,
       },
     )) as { data: unknown };
-
-    console.log(
-      "🚀 ~ file: www.ts:59 ~ getGithubUserData:publicProcedure.query ~ data:",
-      data,
-    );
 
     const parsedDataSchema = z.object({
       user: z.object({

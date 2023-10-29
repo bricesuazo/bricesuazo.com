@@ -33,7 +33,8 @@ export default function HomePage() {
   const { data: repos } = api.www.getPopularRepos.useQuery();
   const { data: userData } = api.www.getGithubUserData.useQuery();
   const reposData = repos?.user.repositories.edges;
-  // const contributions = await getTotalContributionsForYears();
+  const { data: contributions } =
+    api.www.getTotalContributionsForYears.useQuery();
 
   return (
     <>
@@ -99,93 +100,88 @@ export default function HomePage() {
       <section id="additional-info">
         <div>
           <hr className="m-[0_auto] mb-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] px-8 duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
-          <div className="m-[0_auto] mb-8 grid grid-cols-3 gap-x-6 gap-y-10 px-8 text-center text-gray-800/70 dark:text-white/70 md:grid-cols-4 md:gap-x-10 lg:grid-cols-4">
-            <p className="font-semibold duration-200 motion-reduce:transition-none">
-              <Link
-                target="_blank"
-                className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
-                href={`https://github.com/${meta.accounts.github.username}`}
-              >
-                <>
-                  <StarIcon
-                    className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
-                    aria-hidden="true"
-                    role="img"
-                  />{" "}
-                  <span>
-                    {userData && convertNumber(userData.userStars)} Stars on
-                    repositories
-                  </span>
-                </>
-              </Link>
-            </p>
-            <p className="hidden font-semibold duration-200 motion-reduce:transition-none md:block">
-              <Link
-                target="_blank"
-                className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
-                href={`https://github.com/${meta.accounts.github.username}`}
-              >
-                <>
-                  <svg
-                    className="mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"
-                    ></path>
-                  </svg>
-                  <span>
-                    {/* {userData && convertNumber(contributions.total)} Commits */}
-                  </span>
-                </>
-              </Link>
-            </p>
-            <p className="font-semibold duration-200 motion-reduce:transition-none">
-              <Link
-                target="_blank"
-                className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
-                href={`https://github.com/${meta.accounts.github.username}`}
-              >
-                <>
-                  <svg
-                    viewBox="0 0 32 32"
-                    className="-mt-[2px] mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
-                    aria-hidden="true"
-                    role="img"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M9 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Zm1 1.9A5.002 5.002 0 0 0 9 2a5 5 0 0 0-1 9.9v8.2A5.002 5.002 0 0 0 9 30a5 5 0 0 0 1-9.9V18h9a5 5 0 0 0 5-5v-1.1A5.002 5.002 0 0 0 23 2a5 5 0 0 0-1 9.9V13a3 3 0 0 1-3 3h-9v-4.1ZM23 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6ZM12 25a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"
-                    />
-                  </svg>{" "}
-                  <span>
-                    {userData && convertNumber(userData.userForks)} Repositories
-                    forks
-                  </span>
-                </>
-              </Link>
-            </p>
-            <p className="font-semibold duration-200 motion-reduce:transition-none">
-              <Link
-                target="_blank"
-                className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
-                href={`https://github.com/${meta.accounts.github.username}?tab=followers`}
-              >
-                <>
-                  <UsersIcon
-                    className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
-                    aria-hidden="true"
-                    role="img"
-                  />{" "}
-                  <span>
-                    {userData && convertNumber(userData.userFollowers)} Github
-                    Followers
-                  </span>
-                </>
-              </Link>
-            </p>
+          <div className="m-[0_auto] mb-8 grid gap-x-6 gap-y-10 px-8 sm:grid-cols-2 lg:grid-cols-4">
+            <Link
+              target="_blank"
+              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              href={`https://github.com/${meta.accounts.github.username}`}
+            >
+              <>
+                <StarIcon
+                  className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
+                  aria-hidden="true"
+                  role="img"
+                />{" "}
+                <span>
+                  {userData && convertNumber(userData.userStars)} Stars on
+                  repositories
+                </span>
+              </>
+            </Link>
+
+            <Link
+              target="_blank"
+              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              href={`https://github.com/${meta.accounts.github.username}`}
+            >
+              <>
+                <svg
+                  className="mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
+                  aria-hidden="true"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"
+                  ></path>
+                </svg>
+                <span>
+                  {contributions && convertNumber(contributions.total)} Commits
+                </span>
+              </>
+            </Link>
+
+            <Link
+              target="_blank"
+              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              href={`https://github.com/${meta.accounts.github.username}`}
+            >
+              <>
+                <svg
+                  viewBox="0 0 32 32"
+                  className="-mt-[2px] mr-1 inline h-5 w-5 fill-black/[50%] duration-200 group-hover:fill-black motion-reduce:transition-none dark:fill-white/[70%] dark:group-hover:fill-white"
+                  aria-hidden="true"
+                  role="img"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M9 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6Zm1 1.9A5.002 5.002 0 0 0 9 2a5 5 0 0 0-1 9.9v8.2A5.002 5.002 0 0 0 9 30a5 5 0 0 0 1-9.9V18h9a5 5 0 0 0 5-5v-1.1A5.002 5.002 0 0 0 23 2a5 5 0 0 0-1 9.9V13a3 3 0 0 1-3 3h-9v-4.1ZM23 10a3 3 0 1 1 0-6a3 3 0 0 1 0 6ZM12 25a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"
+                  />
+                </svg>{" "}
+                <span>
+                  {userData && convertNumber(userData.userForks)} Repositories
+                  forks
+                </span>
+              </>
+            </Link>
+
+            <Link
+              target="_blank"
+              className="group flex items-center justify-center text-center duration-200 hover:text-gray-800 motion-reduce:transition-none dark:hover:text-white"
+              href={`https://github.com/${meta.accounts.github.username}?tab=followers`}
+            >
+              <>
+                <UsersIcon
+                  className="-mt-[2px] mr-1 inline h-5 w-5 stroke-black/[50%] duration-200 group-hover:stroke-black motion-reduce:transition-none dark:stroke-white/[70%] dark:group-hover:stroke-white"
+                  aria-hidden="true"
+                  role="img"
+                />{" "}
+                <span>
+                  {userData && convertNumber(userData.userFollowers)} Github
+                  Followers
+                </span>
+              </>
+            </Link>
           </div>
         </div>
       </section>
