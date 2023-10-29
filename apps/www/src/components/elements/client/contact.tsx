@@ -24,7 +24,7 @@ import {
 import { Input } from "@bricesuazo/ui/ui/input";
 import { Textarea } from "@bricesuazo/ui/ui/textarea";
 
-import { api } from "~/utils/api";
+import { api } from "~/trpc/client";
 
 export function Contact() {
   const sendMessageMutation = api.www.sendMessage.useMutation({

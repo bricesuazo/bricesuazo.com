@@ -11,7 +11,8 @@ import { cn } from "@bricesuazo/ui/utils";
 
 import { Footer } from "~/components/elements/client/footer";
 import { Header } from "~/components/elements/client/header";
-import { ThemeProvider, TRPCReactProvider } from "./providers";
+import { TRPCReactProvider } from "~/trpc/client";
+import { ThemeProvider } from "./providers";
 
 export const runtime = "edge";
 

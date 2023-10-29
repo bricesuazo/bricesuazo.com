@@ -1,8 +1,7 @@
-"use client";
-
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { StarIcon, UsersIcon } from "lucide-react";
+import { Loader2, StarIcon, UsersIcon } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 
 import {
@@ -21,15 +20,9 @@ import {
   RepoCard,
   RepoCardSkeleton,
 } from "~/components/elements/client/repo-card";
-import { api } from "~/utils/api";
+import { api } from "~/trpc/server";
 
 export default function HomePage() {
-  const { data: repos } = api.www.getPopularRepos.useQuery();
-  const { data: userData } = api.www.getGithubUserData.useQuery();
-  const reposData = repos?.user.repositories.edges;
-  const { data: contributions } =
-    api.www.getTotalContributionsForYears.useQuery();
-
   // const test = api.www.getSpotifyNowPlaying.useQuery();
   // console.log("🚀 ~ file: page.tsx:41 ~ HomePage ~ test:", test.data);
 
@@ -111,10 +104,20 @@ export default function HomePage() {
                   aria-hidden="true"
                   role="img"
                 />{" "}
-                <span>
-                  {userData && convertNumber(userData.userStars)} Stars on
-                  repositories
-                </span>
+                <p>
+                  <Suspense
+                    fallback={
+                      <Loader2 className="inline h-4 w-4 animate-spin" />
+                    }
+                  >
+                    {(async () => {
+                      const userData = await api.www.getGithubUserData.query();
+
+                      return convertNumber(userData.userStars);
+                    })()}
+                  </Suspense>{" "}
+                  Stars on repositories
+                </p>
               </>
             </Link>
 
@@ -134,9 +137,21 @@ export default function HomePage() {
                     d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"
                   ></path>
                 </svg>
-                <span>
-                  {contributions && convertNumber(contributions.total)} Commits
-                </span>
+                <p>
+                  <Suspense
+                    fallback={
+                      <Loader2 className="inline h-4 w-4 animate-spin" />
+                    }
+                  >
+                    {(async () => {
+                      const contributions =
+                        await api.www.getTotalContributionsForYears.query();
+
+                      return convertNumber(contributions.total);
+                    })()}
+                  </Suspense>{" "}
+                  Commits
+                </p>
               </>
             </Link>
 
@@ -158,8 +173,18 @@ export default function HomePage() {
                   />
                 </svg>{" "}
                 <span>
-                  {userData && convertNumber(userData.userForks)} Repositories
-                  forks
+                  <Suspense
+                    fallback={
+                      <Loader2 className="inline h-4 w-4 animate-spin" />
+                    }
+                  >
+                    {(async () => {
+                      const userData = await api.www.getGithubUserData.query();
+
+                      return convertNumber(userData.userForks);
+                    })()}
+                  </Suspense>{" "}
+                  Repositories forks
                 </span>
               </>
             </Link>
@@ -176,8 +201,18 @@ export default function HomePage() {
                   role="img"
                 />{" "}
                 <span>
-                  {userData && convertNumber(userData.userFollowers)} Github
-                  Followers
+                  <Suspense
+                    fallback={
+                      <Loader2 className="inline h-4 w-4 animate-spin" />
+                    }
+                  >
+                    {(async () => {
+                      const userData = await api.www.getGithubUserData.query();
+
+                      return convertNumber(userData.userFollowers);
+                    })()}
+                  </Suspense>{" "}
+                  Github Followers
                 </span>
               </>
             </Link>
@@ -249,20 +284,13 @@ export default function HomePage() {
           </h3>
           <div className="relative">
             <div className="xl-grid-cols-4 mb-8 grid grid-cols-1 gap-8 pb-4 text-center md:grid-cols-2 lg:grid-cols-3">
-              {!reposData
-                ? [...Array(6).keys()].map((key, index) => (
-                    <RepoCardSkeleton key={key} index={index} />
-                  ))
-                : reposData.map((repo, index) => {
-                    return repo.node.owner.login ==
-                      meta.accounts.github.username ? (
-                      <RepoCard
-                        key={repo.node.id}
-                        repo={repo.node}
-                        order={index}
-                      />
-                    ) : null;
-                  })}
+              <Suspense
+                fallback={[...Array(6).keys()].map((key, index) => (
+                  <RepoCardSkeleton key={key} index={index} />
+                ))}
+              >
+                <Repos />
+              </Suspense>
             </div>
             <div className="pointer-events-visible absolute inset-x-0 bottom-0 z-10 flex pt-32 shadow-[0_-10rem_6rem_-2rem_hsl(var(--background))_inset] duration-300 md:pt-80 md:shadow-[0_-12rem_6rem_-2rem_hsl(var(--background))_inset]">
               <div className="flex flex-1 flex-col items-center justify-center duration-200 motion-reduce:transition-none">
@@ -409,4 +437,14 @@ export default function HomePage() {
       </section>
     </>
   );
+}
+
+async function Repos() {
+  const repos = await api.www.getPopularRepos.query();
+  const reposData = repos?.user.repositories.edges;
+  return reposData.map((repo, index) => {
+    return repo.node.owner.login == meta.accounts.github.username ? (
+      <RepoCard key={repo.node.id} repo={repo.node} order={index} />
+    ) : null;
+  });
 }
