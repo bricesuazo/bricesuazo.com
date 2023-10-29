@@ -70,7 +70,12 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en">
       <body className={cn(font.className)}>
         <NextTopLoader color="#7c3aed" shadow={false} showSpinner={false} />
-        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <TRPCReactProvider headers={headers()}>
             <Header />
             <main className="flex flex-col px-6 antialiased">

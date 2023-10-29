@@ -8,9 +8,9 @@ import { env } from "~/env.mjs";
 
 export function Footer() {
   return (
-    <footer className="w-full px-4 py-10 md:px-8 lg:px-16">
+    <footer className="w-full p-6">
       <div className="mx-auto pt-10">
-        <div className="grid grid-cols-2 gap-9 md:grid-cols-6">
+        <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
           <div className="col-span-3">
             <div className="flex items-center space-x-5">
               <Link href="/" legacyBehavior>
@@ -43,7 +43,7 @@ export function Footer() {
             </Button>
           </div>
           {footer.categories.map((category, index) => (
-            <div key={index} className="col-span-1 ">
+            <div key={index} className="col-span-1">
               <p className="mt-3 font-semibold text-secondary-foreground sm:mb-3 sm:mt-0 ">
                 {category.title}
               </p>

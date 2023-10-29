@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <>
       <div className="bg-cover bg-fixed bg-right before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5 before:bg-grid-[#000] dark:before:bg-grid-[#fff]">
-        <div className="bg-main-gradient pointer-events-none absolute -top-1/2 bottom-0 left-0 right-0 z-[-1] bg-contain blur-[160px] will-change-contents"></div>
+        <div className="bg-main-gradient pointer-events-none absolute -top-1/2 bottom-0 left-0 right-0 z-[-1] bg-contain blur-[160px] will-change-contents" />
         <div className="mx-auto flex min-h-screen flex-1 flex-col justify-center duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
           <div className="md:grid-cols-0 grid items-center gap-x-8 md:grid-cols-5">
             <div className="f-full col-span-2 hidden md:flex">
@@ -220,7 +220,7 @@ export default function HomePage() {
           <hr className="m-[0_auto] mt-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
         </div>
       </section>
-      <section id="about" className="scroll-mt-20 p-12 lg:px-24">
+      <section id="about" className="scroll-mt-20">
         <div className="relative mx-auto mb-7 text-center">
           <span className="absolute right-0 top-[90px] z-[-1]">
             <Dots h="107" w="134" />
@@ -255,7 +255,7 @@ export default function HomePage() {
               <Balancer>
                 In October 2021, I started learning React.js, and soon Next.js.
                 I fell in love with this technology and I am now using it
-                proffesionally.
+                professionally.
               </Balancer>
             </p>
             <p>
