@@ -25,6 +25,7 @@
       "dependsOn": ["^topo"],
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     },
+    "start": {},
     "clean": {
       "cache": false
     },
@@ -40,6 +41,9 @@
     "NEXTAUTH_URL",
     "GITHUB_ACCESS_TOKEN",
     "VERSION",
-    "DISCORD_WEBHOOK_URL"
+    "DISCORD_WEBHOOK_URL",
+    "SPOTIFY_CLIENT_ID",
+    "SPOTIFY_CLIENT_SECRET",
+    "SPOTIFY_REFRESH_TOKEN"
   ]
 }

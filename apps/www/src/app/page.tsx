@@ -11,6 +11,7 @@ import {
   meta,
   technologies,
 } from "@bricesuazo/constant/config";
+import { convertNumber } from "@bricesuazo/constant/lib/utils";
 import { cn } from "@bricesuazo/ui/utils";
 
 import Dots from "~/components/decorations/dots";
@@ -22,20 +23,15 @@ import {
 } from "~/components/elements/client/repo-card";
 import { api } from "~/utils/api";
 
-const convertNumber = (number: number) => {
-  return Intl.NumberFormat("en-US", {
-    notation: "compact",
-    style: "decimal",
-    maximumFractionDigits: 2,
-  }).format(number);
-};
-
 export default function HomePage() {
   const { data: repos } = api.www.getPopularRepos.useQuery();
   const { data: userData } = api.www.getGithubUserData.useQuery();
   const reposData = repos?.user.repositories.edges;
   const { data: contributions } =
     api.www.getTotalContributionsForYears.useQuery();
+
+  // const test = api.www.getSpotifyNowPlaying.useQuery();
+  // console.log("🚀 ~ file: page.tsx:41 ~ HomePage ~ test:", test.data);
 
   return (
     <>
@@ -50,6 +46,8 @@ export default function HomePage() {
                   alt="Logo"
                   width={500}
                   height={500}
+                  priority
+                  sizes="100%"
                   className="invert dark:invert-0"
                 />
                 {/* <CodeCard userData={userData} contributions={contributions} /> */}
@@ -101,7 +99,7 @@ export default function HomePage() {
       <section id="additional-info">
         <div>
           <hr className="m-[0_auto] mb-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
-          <div className="m-[0_auto] mb-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="m-[0_auto] grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             <Link
               href={`https://github.com/${meta.accounts.github.username}`}
               target="_blank"
@@ -184,10 +182,10 @@ export default function HomePage() {
               </>
             </Link>
           </div>
+          <hr className="m-[0_auto] mt-8 h-px w-full border-none bg-[linear-gradient(to_right,transparent,rgba(0,0,0,0.2)_50%,transparent)] duration-300 motion-reduce:transition-none dark:bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
         </div>
       </section>
-
-      <section id="about" className="scroll-mt-20 pt-12 lg:px-24">
+      <section id="about" className="scroll-mt-20 p-12 lg:px-24">
         <div className="relative mx-auto mb-7 text-center">
           <span className="absolute right-0 top-[90px] z-[-1]">
             <Dots h="107" w="134" />
@@ -201,6 +199,7 @@ export default function HomePage() {
             fill
             className="hide pointer-events-none -z-10 m-[0_auto] animate-pulse"
           />
+
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             About me.
           </h3>
@@ -269,7 +268,7 @@ export default function HomePage() {
               <div className="flex flex-1 flex-col items-center justify-center duration-200 motion-reduce:transition-none">
                 <Link
                   className="arrow link group pointer-events-auto relative inline-block items-center justify-center font-semibold duration-200 motion-reduce:transition-none"
-                  href="/repositories"
+                  href="/projects"
                 >
                   <>
                     See more projects

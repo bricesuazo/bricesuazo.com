@@ -45,12 +45,12 @@ export const nav = {
       title: "Home",
     },
     {
-      title: "My work",
-      href: "/repositories",
+      title: "Projects",
+      href: "/projects",
     },
     {
-      title: "Motion Graphics",
-      href: "/motion",
+      title: "Videos",
+      href: "/videos",
     },
   ],
   right: [
@@ -263,11 +263,15 @@ export const footer: Footer = {
         },
         {
           title: "Projects",
-          href: "/repositories",
+          href: "/projects",
         },
         {
           title: "Motion Graphics",
-          href: "/motion",
+          href: "/videos?t=motion",
+        },
+        {
+          title: "Films",
+          href: "/videos?t=films",
         },
       ],
     },
@@ -285,11 +289,6 @@ export const footer: Footer = {
           target: "_blank",
         },
         {
-          title: "Discord",
-          href: meta.accounts.discord.invite,
-          target: "_blank",
-        },
-        {
           title: "YouTube",
           href: `https://www.youtube.com/${meta.accounts.youtube.username}`,
           target: "_blank",
@@ -302,10 +301,6 @@ export const footer: Footer = {
         {
           title: "What I use",
           href: "/uses",
-        },
-        {
-          title: "Contact",
-          href: "/contact",
         },
       ],
     },

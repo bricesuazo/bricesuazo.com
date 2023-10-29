@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
+import NextTopLoader from "nextjs-toploader";
 
 import { meta } from "@bricesuazo/constant/config";
 import { cn } from "@bricesuazo/ui/utils";
@@ -12,7 +13,7 @@ import { Footer } from "~/components/elements/client/footer";
 import { Header } from "~/components/elements/client/header";
 import { ThemeProvider, TRPCReactProvider } from "./providers";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 /**
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
@@ -67,6 +68,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={cn(font.className)}>
+        <NextTopLoader color="#7c3aed" shadow={false} showSpinner={false} />
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           <TRPCReactProvider headers={headers()}>
             <Header />
