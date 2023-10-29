@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { StarIcon, UsersIcon } from "lucide-react";
+import Balancer from "react-wrap-balancer";
 
 import {
   contact,
@@ -62,7 +63,7 @@ export default function HomePage() {
                 {header.subtitle}
               </h2>
               <p className="mt-2 text-center text-muted-foreground md:w-3/4 md:text-left">
-                {header.description}
+                <Balancer>{header.description}</Balancer>
               </p>
               <div className="mt-4 flex justify-center md:block">
                 <a
@@ -206,36 +207,44 @@ export default function HomePage() {
 
           <div className="mx-auto max-w-screen-sm space-y-4 text-center">
             <p>
-              I have been coding for more than 5 years. I started my journey at
-              2018.
+              <Balancer>
+                I have been coding for more than 5 years. I started my journey
+                at 2018.
+              </Balancer>
             </p>
             <p>
-              At first, I learned Java, MySQL, HTML, and CSS to build websites
+              <Balancer>
+                At first, I learned Java, MySQL, HTML, and CSS to build websites
+              </Balancer>
             </p>
             <p>
-              In October 2021, I started learning React.js, and soon Next.js. I
-              fell in love with this technology and I am now using it
-              proffesionally.
+              <Balancer>
+                In October 2021, I started learning React.js, and soon Next.js.
+                I fell in love with this technology and I am now using it
+                proffesionally.
+              </Balancer>
             </p>
             <p>
-              In October 2022, I started working with my first SaaS company. It
-              is called{" "}
-              <Link
-                href="https://www.eboto-mo.com"
-                target="_blank"
-                className="text-primary hover:underline"
-              >
-                eBoto
-              </Link>
-              , it is a versatile web-based voting platform that offers secure
-              online elections for any type of organization.
+              <Balancer>
+                In October 2022, I started working with my first SaaS company.
+                It is called{" "}
+                <Link
+                  href="https://www.eboto-mo.com"
+                  target="_blank"
+                  className="text-primary hover:underline"
+                >
+                  eBoto
+                </Link>
+                , it is a versatile web-based voting platform that offers secure
+                online elections for any type of organization.
+              </Balancer>
             </p>
           </div>
         </div>
       </section>
 
       <section id="repositories" className="scroll-mt-20 pt-12 lg:px-24">
-        <div className="before:gradient-mask-t-0 relative mx-auto before:absolute before:inset-0 before:z-[-1] before:bg-[length:22px_22px] before:bg-center before:bg-repeat-space before:opacity-10 before:bg-grid-[#000] dark:before:opacity-20 dark:before:bg-grid-[#fff]">
+        <div className="relative mx-auto before:absolute before:inset-0 before:z-[-1] before:bg-[length:22px_22px] before:bg-center before:bg-repeat-space before:opacity-10 before:bg-grid-[#000] before:gradient-mask-t-0 dark:before:opacity-20 dark:before:bg-grid-[#fff]">
           <h3 className="m-6 text-center text-[35px] font-semibold tracking-[-0.03em] text-gray-800 duration-300 motion-reduce:transition-none dark:text-white md:text-[35px] lg:text-[37px] xl:text-[40px]">
             Most Popular Projects.
           </h3>
@@ -361,7 +370,9 @@ export default function HomePage() {
               Contact me.
             </h3>
             <p className="pb-1 text-center text-base text-muted-foreground">
-              Want to order a project? Or do you just want to stay in touch?
+              <Balancer>
+                Want to order a project? Or do you just want to stay in touch?
+              </Balancer>
             </p>
           </header>
           <div className="relative">

@@ -89,6 +89,9 @@ importers:
       react-parallax-tilt:
         specifier: ^1.7.172
         version: registry.npmjs.org/react-parallax-tilt@1.7.172(react-dom@18.2.0)(react@18.2.0)
+      react-wrap-balancer:
+        specifier: ^1.1.0
+        version: registry.npmjs.org/react-wrap-balancer@1.1.0(react@18.2.0)
       superjson:
         specifier: 1.13.1
         version: registry.npmjs.org/superjson@1.13.1
@@ -7718,6 +7721,17 @@ packages:
       invariant: registry.npmjs.org/invariant@2.2.4
       react: registry.npmjs.org/react@18.2.0
       tslib: registry.npmjs.org/tslib@2.6.2
+    dev: false
+
+  registry.npmjs.org/react-wrap-balancer@1.1.0(react@18.2.0):
+    resolution: {integrity: sha512-EhF3jOZm5Fjx+Cx41e423qOv2c2aOvXAtym2OHqrGeMUnwERIyNsRBgnfT3plB170JmuYvts8K2KSPEIerKr5A==, registry: http://registry.npmjs.com/, tarball: https://registry.npmjs.org/react-wrap-balancer/-/react-wrap-balancer-1.1.0.tgz}
+    id: registry.npmjs.org/react-wrap-balancer/1.1.0
+    name: react-wrap-balancer
+    version: 1.1.0
+    peerDependencies:
+      react: '>=16.8.0 || ^17.0.0 || ^18'
+    dependencies:
+      react: registry.npmjs.org/react@18.2.0
     dev: false
 
   registry.npmjs.org/react@18.2.0:

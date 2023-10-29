@@ -37,7 +37,7 @@ export function Header() {
   const { setTheme, theme } = useTheme();
   return (
     <nav key="nav" className="fixed top-0 z-50 w-full shadow dark:shadow-2xl">
-      <div className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 relative mx-auto flex h-20 items-center justify-between border-b-[1px] bg-opacity-70 px-6 py-4 duration-300 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:bg-opacity-70">
+      <div className="relative mx-auto flex h-20 items-center justify-between border-b px-6 py-4 duration-300 motion-reduce:transition-none">
         <div className="fixed inset-0 z-[-1] h-[inherit] backdrop-blur-xl" />
         <Link
           href="/"
