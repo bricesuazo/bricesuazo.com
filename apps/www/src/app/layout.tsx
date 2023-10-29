@@ -13,7 +13,7 @@ import { Footer } from "~/components/elements/client/footer";
 import { Header } from "~/components/elements/client/header";
 import { ThemeProvider, TRPCReactProvider } from "./providers";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 /**
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
