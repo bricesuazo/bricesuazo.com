@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getBaseUrl } from "~/trpc/shared";
+
 export default function ProjectsPage() {
   const projects = [
     {
@@ -76,7 +78,10 @@ export default function ProjectsPage() {
             <div className="space-y-2">
               <div className="relative aspect-video">
                 <Image
-                  src={`/api/project?title=${project.title}&description=${project.description}`}
+                  src={new URL(
+                    `/api/project?title=${project.title}&description=${project.description}`,
+                    getBaseUrl(),
+                  ).toString()}
                   alt={project.title}
                   fill
                   className="rounded-xl border object-cover object-center"
