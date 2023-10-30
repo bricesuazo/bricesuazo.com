@@ -27,6 +27,67 @@ importers:
         specifier: ^5.2.2
         version: registry.npmjs.org/typescript@5.2.2
 
+  apps/link:
+    dependencies:
+      '@bricesuazo/constant':
+        specifier: 0.0.0
+        version: link:../../packages/constant
+      lucide-react:
+        specifier: ^0.290.0
+        version: registry.npmjs.org/lucide-react@0.290.0(react@18.2.0)
+      next:
+        specifier: ^14.0.0
+        version: registry.npmjs.org/next@14.0.0(react-dom@18.2.0)(react@18.2.0)
+      next-themes:
+        specifier: ^0.2.1
+        version: registry.npmjs.org/next-themes@0.2.1(next@14.0.0)(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: 18.2.0
+        version: registry.npmjs.org/react@18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
+      react-icons:
+        specifier: ^4.11.0
+        version: registry.npmjs.org/react-icons@4.11.0(react@18.2.0)
+    devDependencies:
+      '@bricesuazo/eslint-config':
+        specifier: 0.0.0
+        version: link:../../tooling/eslint
+      '@bricesuazo/prettier-config':
+        specifier: 0.0.0
+        version: link:../../tooling/prettier
+      '@bricesuazo/tailwind-config':
+        specifier: 0.0.0
+        version: link:../../tooling/tailwind
+      '@bricesuazo/tsconfig':
+        specifier: 0.0.0
+        version: link:../../tooling/typescript
+      '@types/node':
+        specifier: ^18.18.7
+        version: registry.npmjs.org/@types/node@18.18.7
+      '@types/react':
+        specifier: ^18.2.33
+        version: registry.npmjs.org/@types/react@18.2.33
+      '@types/react-dom':
+        specifier: ^18.2.14
+        version: registry.npmjs.org/@types/react-dom@18.2.14
+      dotenv-cli:
+        specifier: ^7.3.0
+        version: registry.npmjs.org/dotenv-cli@7.3.0
+      eslint:
+        specifier: ^8.52.0
+        version: registry.npmjs.org/eslint@8.52.0
+      prettier:
+        specifier: ^3.0.3
+        version: registry.npmjs.org/prettier@3.0.3
+      tailwindcss:
+        specifier: 3.3.5
+        version: registry.npmjs.org/tailwindcss@3.3.5
+      typescript:
+        specifier: ^5.2.2
+        version: registry.npmjs.org/typescript@5.2.2
+
   apps/www:
     dependencies:
       '@bricesuazo/api':
@@ -3881,7 +3942,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: registry.npmjs.org/browserslist@4.22.1
-      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001555
+      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001557
       fraction.js: registry.npmjs.org/fraction.js@4.3.7
       normalize-range: registry.npmjs.org/normalize-range@0.1.2
       picocolors: registry.npmjs.org/picocolors@1.0.0
@@ -3975,7 +4036,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001555
+      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001557
       electron-to-chromium: registry.npmjs.org/electron-to-chromium@1.4.569
       node-releases: registry.npmjs.org/node-releases@2.0.13
       update-browserslist-db: registry.npmjs.org/update-browserslist-db@1.0.13(browserslist@4.22.1)
@@ -4072,10 +4133,10 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  registry.npmjs.org/caniuse-lite@1.0.30001555:
-    resolution: {integrity: sha512-NzbUFKUnJ3DTcq6YyZB6+qqhfD112uR3uoEnkmfzm2wVzUNsFkU7AwBjKQ654Sp5cau0JxhFyRSn/tQZ+XfygA==, registry: http://registry.npmjs.com/, tarball: https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001555.tgz}
+  registry.npmjs.org/caniuse-lite@1.0.30001557:
+    resolution: {integrity: sha512-91oR7hLNUP3gG6MLU+n96em322a8Xzes8wWdBKhLgUoiJsAF5irZnxSUCbc+qUZXNnPCfUwLOi9ZCZpkvjQajw==, registry: http://registry.npmjs.com/, tarball: https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001557.tgz}
     name: caniuse-lite
-    version: 1.0.30001555
+    version: 1.0.30001557
     dev: false
 
   registry.npmjs.org/chalk@2.4.2:
@@ -6891,7 +6952,7 @@ packages:
       '@next/env': registry.npmjs.org/@next/env@14.0.0
       '@swc/helpers': registry.npmjs.org/@swc/helpers@0.5.2
       busboy: registry.npmjs.org/busboy@1.6.0
-      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001555
+      caniuse-lite: registry.npmjs.org/caniuse-lite@1.0.30001557
       postcss: registry.npmjs.org/postcss@8.4.31
       react: registry.npmjs.org/react@18.2.0
       react-dom: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
@@ -7652,6 +7713,17 @@ packages:
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: registry.npmjs.org/react@18.2.0
+    dev: false
+
+  registry.npmjs.org/react-icons@4.11.0(react@18.2.0):
+    resolution: {integrity: sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==, registry: http://registry.npmjs.com/, tarball: https://registry.npmjs.org/react-icons/-/react-icons-4.11.0.tgz}
+    id: registry.npmjs.org/react-icons/4.11.0
+    name: react-icons
+    version: 4.11.0
+    peerDependencies:
+      react: '*'
     dependencies:
       react: registry.npmjs.org/react@18.2.0
     dev: false
