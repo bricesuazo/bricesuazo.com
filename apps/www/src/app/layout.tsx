@@ -14,7 +14,7 @@ import { Header } from "~/components/elements/client/header";
 import { TRPCReactProvider } from "~/trpc/client";
 import { ThemeProvider } from "./providers";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 /**
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to

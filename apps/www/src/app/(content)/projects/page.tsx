@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getBaseUrl } from "~/trpc/shared";
-
 export default function ProjectsPage() {
   const projects = [
     {
@@ -80,7 +78,9 @@ export default function ProjectsPage() {
                 <Image
                   src={new URL(
                     `/api/project?title=${project.title}&description=${project.description}`,
-                    getBaseUrl(),
+                    process.env.VERCEL_URL
+                      ? "https://bricesuazo.com"
+                      : "http://localhost:3000",
                   ).toString()}
                   alt={project.title}
                   fill
