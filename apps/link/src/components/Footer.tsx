@@ -4,5 +4,4 @@ export default function Footer() {
       Brice Suazo • ©{new Date().getFullYear()}
     </footer>
   );
-};
-
+}

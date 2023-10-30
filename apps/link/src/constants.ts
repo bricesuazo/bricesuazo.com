@@ -33,7 +33,6 @@ export const links: {
     url: "https://github.com/bricesuazo/",
     icon: FaGithub,
   },
-
   {
     id: 2,
     name: "Twitter",

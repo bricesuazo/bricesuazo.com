@@ -4,6 +4,9 @@ import "@bricesuazo/auth/env.mjs";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  // images: {
+  //   remotePatterns: [{ hostname: "bricesuazo.com" }, { hostname: "localhost" }],
+  // },
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
