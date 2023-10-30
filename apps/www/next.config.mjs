@@ -4,6 +4,14 @@ import "@bricesuazo/auth/env.mjs";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  // // eslint-disable-next-line @typescript-eslint/require-await
+  // redirects: async () => [
+  //   {
+  //     source: "/videos",
+  //     destination: "/videos?t=motion",
+  //     permanent: true,
+  //   },
+  // ],
   images: {
     remotePatterns: [{ hostname: "bricesuazo.com" }, { hostname: "localhost" }],
   },

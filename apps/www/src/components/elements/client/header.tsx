@@ -41,7 +41,7 @@ export function Header() {
         <div className="fixed inset-0 z-[-1] h-[inherit] backdrop-blur-xl" />
         <Link
           href="/"
-          className="mr-8 text-xl font-semibold text-gray-800 duration-300 motion-reduce:transition-none dark:text-white"
+          className="mr-8 text-xl font-semibold text-foreground duration-300 motion-reduce:transition-none"
         >
           {meta.title}.
         </Link>

@@ -12,7 +12,7 @@ export default function ContentLayout(
   return (
     <>
       <section className="relative">
-        <div className="grid h-80 place-items-center bg-cover bg-fixed bg-center pt-20 before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5 before:bg-grid-[#000] dark:before:bg-grid-[#fff]">
+        <div className="grid h-60 place-items-center bg-cover bg-fixed bg-center pt-20 before:absolute before:inset-0 before:z-[-1] before:bg-[length:30px_30px] before:bg-center before:opacity-5 before:bg-grid-[#000] dark:before:bg-grid-[#fff]">
           <h1 className="text-4xl font-bold">
             {
               nav.left

@@ -271,7 +271,7 @@ export const footer: Footer = {
         },
         {
           title: "Films",
-          href: "/videos?t=films",
+          href: "/videos?t=film",
         },
       ],
     },
