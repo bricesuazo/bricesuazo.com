@@ -2,7 +2,7 @@
   "name": "bricesuazo",
   "packageManager": "pnpm@8.9.2",
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --parallel",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo clean",
     "postinstall": "manypkg check",
