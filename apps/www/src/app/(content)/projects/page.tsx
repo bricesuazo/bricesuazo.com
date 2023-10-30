@@ -18,7 +18,7 @@ const projects = [
     title: "My Portfolio Website",
     description:
       "A simple portfolio website that showcases my skills and projects.",
-    url: "https://jib.im",
+    url: "https://bricesuazo.com",
   },
   {
     title: "Gulaman Entertainment",
@@ -66,7 +66,7 @@ export default function ProjectsPage() {
         Here&apos;s a list of projects I&apos;ve worked on.
       </h4>
 
-      <section className="mx-auto grid max-w-screen-lg grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Link
             key={Math.random()}

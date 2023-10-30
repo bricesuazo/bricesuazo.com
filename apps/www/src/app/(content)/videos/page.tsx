@@ -169,7 +169,7 @@ export default function VideosPage({
           to large corporations.
         </p>
       </div>
-      <div className="mx-auto max-w-screen-lg space-y-4">
+      <div className="space-y-4">
         <Tabs
           value={searchParams.t}
           onValueChange={(value) =>
@@ -250,7 +250,7 @@ export default function VideosPage({
         </Tabs>
         <h4 className="text-center text-lg font-semibold">...and more!</h4>
 
-        <p className="mx-auto max-w-xs space-y-2 text-center">
+        <p className="space-y-2 text-center">
           You can check out my other video works on my social media accounts.
         </p>
 
