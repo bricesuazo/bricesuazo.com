@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Brice Suazo - CV 2023",
+  title: "Brice Suazo - CV",
 };
 
 export default function Layout({ children }: React.PropsWithChildren) {
-  // redirect("/Brice Suazo - CV 2023.pdf");
   return <>{children}</>;
 }
