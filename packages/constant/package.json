@@ -1,6 +1,5 @@
 {
   "name": "@bricesuazo/constant",
-  "version": "0.0.0",
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
@@ -13,9 +12,9 @@
     "@t3-oss/env-nextjs": "^0.7.1"
   },
   "devDependencies": {
-    "@bricesuazo/eslint-config": "0.0.0",
-    "@bricesuazo/prettier-config": "0.0.0",
-    "@bricesuazo/tsconfig": "0.0.0"
+    "@bricesuazo/eslint-config": "workspace:*",
+    "@bricesuazo/prettier-config": "workspace:*",
+    "@bricesuazo/tsconfig": "workspace:*"
   },
   "eslintConfig": {
     "root": true,

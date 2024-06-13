@@ -1,6 +1,5 @@
 {
   "name": "@bricesuazo/db",
-  "version": "0.0.0",
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
@@ -16,9 +15,9 @@
     "drizzle-orm": "^0.28.6"
   },
   "devDependencies": {
-    "@bricesuazo/eslint-config": "0.0.0",
-    "@bricesuazo/prettier-config": "0.0.0",
-    "@bricesuazo/tsconfig": "0.0.0",
+    "@bricesuazo/eslint-config": "workspace:*",
+    "@bricesuazo/prettier-config": "workspace:*",
+    "@bricesuazo/tsconfig": "workspace:*",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
     "eslint": "^8.52.0",

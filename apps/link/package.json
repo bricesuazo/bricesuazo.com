@@ -1,6 +1,5 @@
 {
   "name": "link",
-  "version": "0.0.0",
   "scripts": {
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
@@ -12,7 +11,7 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@bricesuazo/constant": "0.0.0",
+    "@bricesuazo/constant": "workspace:*",
     "lucide-react": "^0.290.0",
     "next": "^14.0.0",
     "next-themes": "^0.2.1",
@@ -21,10 +20,10 @@
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
-    "@bricesuazo/eslint-config": "0.0.0",
-    "@bricesuazo/prettier-config": "0.0.0",
-    "@bricesuazo/tailwind-config": "0.0.0",
-    "@bricesuazo/tsconfig": "0.0.0",
+    "@bricesuazo/eslint-config": "workspace:*",
+    "@bricesuazo/prettier-config": "workspace:*",
+    "@bricesuazo/tailwind-config": "workspace:*",
+    "@bricesuazo/tsconfig": "workspace:*",
     "@types/node": "^18.18.7",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",

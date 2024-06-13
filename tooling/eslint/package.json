@@ -1,6 +1,5 @@
 {
   "name": "@bricesuazo/eslint-config",
-  "version": "0.0.0",
   "files": [
     "./base.js",
     "./nextjs.js",
@@ -25,8 +24,8 @@
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "devDependencies": {
-    "@bricesuazo/prettier-config": "0.0.0",
-    "@bricesuazo/tsconfig": "0.0.0",
+    "@bricesuazo/prettier-config": "workspace:*",
+    "@bricesuazo/tsconfig": "workspace:*",
     "eslint": "^8.52.0",
     "typescript": "^5.2.2"
   },

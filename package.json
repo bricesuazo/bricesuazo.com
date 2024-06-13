@@ -1,6 +1,5 @@
 {
   "name": "bricesuazo",
-  "packageManager": "pnpm@8.9.2",
   "scripts": {
     "build": "turbo build --parallel",
     "clean": "git clean -xdf node_modules",
@@ -18,7 +17,7 @@
     "ui": "pnpm --filter=ui ui"
   },
   "dependencies": {
-    "@bricesuazo/prettier-config": "0.0.0",
+    "@bricesuazo/prettier-config": "workspace:*",
     "@manypkg/cli": "^0.21.0",
     "@turbo/gen": "^1.10.15",
     "prettier": "^3.0.3",
