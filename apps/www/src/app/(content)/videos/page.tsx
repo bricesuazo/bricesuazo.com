@@ -60,6 +60,18 @@ const motion_graphics = [
 ];
 const films = [
   {
+    title: "Tagaytay: Where every moment becomes a memory",
+    description: "Our final project in GNED07 - The Contemporary World",
+    url: "https://www.youtube.com/watch?v=HrhHC53v1wc",
+    image_link: "/assets/videos/films/tagaytay.jpg",
+  },
+  {
+    title: "Kalikát - An Advocacy Film",
+    description: "Our final project in GNED10 - Gender and Society",
+    url: "https://youtu.be/4hhsGGOXwkc",
+    image_link: "/assets/videos/films/kalikat.jpg",
+  },
+  {
     title: "Noli Me Tángere & El Filibusterismo (Character Portrayal)",
     description:
       "A character portrayal of the characters from the novels Noli Me Tángere and El Filibusterismo by Jose Rizal.",

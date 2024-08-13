@@ -44,7 +44,7 @@
     "react-hook-form": "^7.47.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@bricesuazo/eslint-config": "workspace:*",
@@ -52,7 +52,7 @@
     "@bricesuazo/tailwind-config": "workspace:*",
     "@bricesuazo/tsconfig": "workspace:*",
     "eslint": "^8.52.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.5.4"
   },
   "eslintConfig": {
     "extends": [

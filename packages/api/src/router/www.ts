@@ -161,35 +161,22 @@ export const wwwRouter = createTRPCRouter({
   }),
   getPopularRepos: publicProcedure.query(async () => {
     const { data } = (await requestGraphql(
-      `
-      query($username: String!) {
+      `    query($username: String!) {
         user(login: $username) {
-          repositories(
-            isFork: false
-            isLocked: false
-            privacy: PUBLIC
-            first: 6
-            orderBy: {field: STARGAZERS, direction: DESC}
-            ownerAffiliations: OWNER
-          ) {
-            edges {
-              node {
-                ... on Repository {
+          pinnedItems(first: 6, types: REPOSITORY) {
+            nodes {
+              ... on Repository {
+                name
+                url
+                description
+                isArchived
+                forkCount
+                id
+                openGraphImageUrl
+                stargazerCount
+                primaryLanguage {
                   name
-                  url
-                  owner {
-                    login
-                  }
-                  description
-                  isArchived
-                  forkCount
-                  id
-                  openGraphImageUrl
-                  stargazerCount
-                  primaryLanguage {
-                    name
-                    color
-                  }
+                  color
                 }
               }
             }
@@ -204,28 +191,23 @@ export const wwwRouter = createTRPCRouter({
 
     const parsedDataSchema = z.object({
       user: z.object({
-        repositories: z.object({
-          edges: z.array(
-            z.object({
-              node: z.object({
+        pinnedItems: z.object({
+          nodes: z
+            .object({
+              name: z.string(),
+              url: z.string().url(),
+              description: z.string().nullable(),
+              isArchived: z.boolean(),
+              forkCount: z.number(),
+              id: z.string(),
+              stargazerCount: z.number(),
+              primaryLanguage: z.object({
                 name: z.string(),
-                url: z.string(),
-                owner: z.object({
-                  login: z.string(),
-                }),
-                description: z.string().nullable(),
-                isArchived: z.boolean(),
-                forkCount: z.number(),
-                id: z.string(),
-                stargazerCount: z.number(),
-                primaryLanguage: z.object({
-                  name: z.string(),
-                  color: z.string(),
-                }),
-                openGraphImageUrl: z.string().url(),
+                color: z.string(),
               }),
-            }),
-          ),
+              openGraphImageUrl: z.string().url(),
+            })
+            .array(),
         }),
       }),
     });

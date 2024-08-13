@@ -99,33 +99,33 @@ export const projects: {
 }[] = [
   {
     id: 0,
-    name: "eBoto Mo",
+    name: "eBoto",
     slug: "eboto",
-    url: "https://eboto-mo.com",
+    url: "https://eboto.app",
   },
   {
     id: 1,
     name: "scrtmsg.me",
     slug: "scrtmsg",
-    url: "https://scrtmsg.me",
+    url: "https://scrtmsgme.vercel.app",
   },
   {
     id: 2,
     name: "Jib",
     slug: "jib",
-    url: "https://jib.im",
+    url: "https://jib.vercel.app",
   },
   {
     id: 3,
-    name: "CvSU.me",
-    slug: "cvsu.me",
-    url: "https://cvsu.me",
+    name: "Kabsu.me",
+    slug: "kabsu.me",
+    url: "https://kabsu.me",
   },
   {
     id: 4,
     name: "Gulaman Entertainment",
     slug: "gulaman",
-    url: "https://gulamanentertainment.com",
+    url: "https://gulaman.vercel.app",
   },
   {
     id: 5,

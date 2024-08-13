@@ -8,9 +8,11 @@ import { cn } from "@bricesuazo/ui/utils";
 export function RepoCard({
   order,
   repo,
+  username,
 }: {
   order: number;
-  repo: RouterOutputs["www"]["getPopularRepos"]["user"]["repositories"]["edges"][number]["node"];
+  repo: RouterOutputs["www"]["getPopularRepos"]["user"]["pinnedItems"]["nodes"][number];
+  username: string;
 }) {
   return (
     <div
@@ -36,7 +38,7 @@ export function RepoCard({
           target="_blank"
         >
           <FolderIcon className="inline h-5 w-5 fill-muted stroke-muted-foreground duration-200 motion-reduce:transition-none" />{" "}
-          {repo.owner.login}/{repo.name}
+          {username}/{repo.name}
         </Link>{" "}
         <span className="inline-flex content-center items-center rounded-lg border-[1px] border-black/[15%] px-[0.5em] py-[0.12em] align-middle text-[88%] text-gray-800/[55%] duration-200 hover:bg-black/[5%] motion-reduce:transition-none dark:border-neutral-800 dark:text-white/[50%] dark:hover:bg-white/[5%]">
           {repo.isArchived ? (

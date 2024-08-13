@@ -3,16 +3,31 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "eBoto Mo",
-    description:
-      "One-Stop Online Voting Solution — A web-based voting platform that offers secure elections for any type of organization.",
-    url: "https://eboto-mo.com",
+    title: "Servebeez",
+    description: "Booking Services Made Easy",
+    url: "https://servebeez.com",
   },
   {
-    title: "CvSU.me",
+    title: "eBoto",
+    description:
+      "One-Stop Online Voting Solution — A web-based voting platform that offers secure elections for any type of organization.",
+    url: "https://eboto.app",
+  },
+  {
+    title: "Kabsu.me",
     description:
       "A social media platform that's only exclusive for Cavite State University students, faculty, and alumni.",
-    url: "https://cvsu.me",
+    url: "https://kabsu.me",
+  },
+  {
+    title: "Swardify",
+    description: "A Bidirectional Swardspeak and Tagalog Translator",
+    url: "https://swardify.kabsu.me",
+  },
+  {
+    title: "Root Finding",
+    description: "Different Methods of Root Finding",
+    url: "https://root-finding.kabsu.me",
   },
   {
     title: "My Portfolio Website",
@@ -29,12 +44,12 @@ const projects = [
   {
     title: "scrtmsg.me",
     description: "Get message from anonymous.",
-    url: "https://scrtmsg.me",
+    url: "https://scrtmsgme.vercel.app",
   },
   {
     title: "Jib.im",
     description: "An open-source and powerful link shortener.",
-    url: "https://jib.im",
+    url: "https://jib.vercel.app",
   },
   {
     title: "Amazn.ai",

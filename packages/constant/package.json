@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.7.1"
+    "@t3-oss/env-nextjs": "^0.11.0"
   },
   "devDependencies": {
     "@bricesuazo/eslint-config": "workspace:*",

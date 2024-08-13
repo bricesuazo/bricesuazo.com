@@ -1,5 +1,10 @@
 {
   "name": "bricesuazo",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "turbo build --parallel",
     "clean": "git clean -xdf node_modules",
@@ -18,11 +23,11 @@
   },
   "dependencies": {
     "@bricesuazo/prettier-config": "workspace:*",
-    "@manypkg/cli": "^0.21.0",
-    "@turbo/gen": "^1.10.15",
-    "prettier": "^3.0.3",
-    "turbo": "^1.10.15",
-    "typescript": "^5.2.2"
+    "@manypkg/cli": "^0.21.4",
+    "@turbo/gen": "^2.0.12",
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.12",
+    "typescript": "^5.5.4"
   },
   "prettier": "@bricesuazo/prettier-config"
 }

@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Loader2, StarIcon, UsersIcon } from "lucide-react";
-import Balancer from "react-wrap-balancer";
 
 import {
   contact,
@@ -53,8 +52,8 @@ export default function HomePage() {
               <h2 className="text-center text-[1.5rem] font-semibold text-secondary-foreground opacity-80 md:text-left">
                 {header.subtitle}
               </h2>
-              <p className="mt-2 text-center text-muted-foreground md:w-3/4 md:text-left">
-                <Balancer>{header.description}</Balancer>
+              <p className="mt-2 text-balance text-center text-muted-foreground md:w-3/4 md:text-left">
+                {header.description}
               </p>
               <div className="mt-4 flex justify-center md:block">
                 <a
@@ -240,38 +239,30 @@ export default function HomePage() {
           </h3>
 
           <div className="mx-auto max-w-screen-sm space-y-4 text-center">
-            <p>
-              <Balancer>
-                I have been coding for more than 5 years. I started my journey
-                at 2018.
-              </Balancer>
+            <p className="text-balance">
+              I have been coding for more than 6 years. I started my journey at
+              2018.
             </p>
-            <p>
-              <Balancer>
-                At first, I learned Java, MySQL, HTML, and CSS to build websites
-              </Balancer>
+            <p className="text-balance">
+              At first, I learned Java, MySQL, HTML, and CSS to build websites
             </p>
-            <p>
-              <Balancer>
-                In October 2021, I started learning React.js, and soon Next.js.
-                I fell in love with this technology and I am now using it
-                professionally.
-              </Balancer>
+            <p className="text-balance">
+              In October 2021, I started learning React.js, and soon Next.js. I
+              fell in love with this technology and I am now using it
+              professionally.
             </p>
-            <p>
-              <Balancer>
-                In October 2022, I started working with my first SaaS company.
-                It is called{" "}
-                <Link
-                  href="https://www.eboto-mo.com"
-                  target="_blank"
-                  className="text-primary hover:underline"
-                >
-                  eBoto
-                </Link>
-                , it is a versatile web-based voting platform that offers secure
-                online elections for any type of organization.
-              </Balancer>
+            <p className="text-balance">
+              In October 2022, I started working with my first SaaS company. It
+              is called{" "}
+              <Link
+                href="https://www.eboto.app"
+                target="_blank"
+                className="text-primary hover:underline"
+              >
+                eBoto
+              </Link>
+              , it is a versatile web-based voting platform that offers secure
+              online elections for any type of organization.
             </p>
           </div>
         </div>
@@ -379,7 +370,7 @@ export default function HomePage() {
             );
           })}
         </div>
-        <p className="mt-9 text-center text-xl font-semibold ">
+        <p className="mt-9 text-center text-xl font-semibold">
           ...and many others!
         </p>
       </section>
@@ -396,10 +387,8 @@ export default function HomePage() {
             <h3 className="m-6 mb-2 text-center text-[35px] font-semibold tracking-[-0.03em] text-secondary-foreground duration-300 motion-reduce:transition-none md:text-[35px] lg:text-[37px] xl:text-[40px]">
               Contact me.
             </h3>
-            <p className="pb-1 text-center text-base text-muted-foreground">
-              <Balancer>
-                Want to order a project? Or do you just want to stay in touch?
-              </Balancer>
+            <p className="text-balance pb-1 text-center text-base text-muted-foreground">
+              Want to order a project? Or do you just want to stay in touch?
             </p>
           </header>
           <div className="relative">
@@ -441,10 +430,15 @@ export default function HomePage() {
 
 async function Repos() {
   const repos = await api.www.getPopularRepos.query();
-  const reposData = repos?.user.repositories.edges;
+  const reposData = repos?.user.pinnedItems.nodes;
   return reposData.map((repo, index) => {
-    return repo.node.owner.login == meta.accounts.github.username ? (
-      <RepoCard key={repo.node.id} repo={repo.node} order={index} />
-    ) : null;
+    return (
+      <RepoCard
+        order={index}
+        key={repo.id}
+        repo={repo}
+        username={meta.accounts.github.username}
+      />
+    );
   });
 }

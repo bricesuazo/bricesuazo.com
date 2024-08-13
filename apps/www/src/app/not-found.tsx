@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { AlertTriangleIcon, ArrowRightIcon } from "lucide-react";
-import Balancer from "react-wrap-balancer";
 
 import { Button } from "@bricesuazo/ui/ui/button";
 
@@ -16,11 +15,9 @@ export default function NotFound() {
         <h1 className="text-fill-transparent mx-0 mt-0 bg-gradient-to-r from-[#ff7170] to-[#ffe57f] box-decoration-clone bg-clip-text text-center text-3xl font-semibold">
           404 - Page not found
         </h1>
-        <p className="mt-3 text-center text-neutral-800 dark:text-neutral-200">
-          <Balancer>
-            We&apos;re sorry — we can&apos;t find the page you&apos;re looking
-            for.
-          </Balancer>
+        <p className="text-balance mt-3 text-center text-neutral-800 dark:text-neutral-200">
+          We&apos;re sorry — we can&apos;t find the page you&apos;re looking
+          for.
         </p>
         <div className="mt-3 flex justify-center">
           <Button asChild className="group">

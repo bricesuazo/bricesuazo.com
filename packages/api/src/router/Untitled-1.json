@@ -1,0 +1,80 @@
+{
+  "user": {
+    "pinnedItems": {
+      "nodes": [
+        {
+          "name": "eboto",
+          "url": "https://github.com/bricesuazo/eboto",
+          "owner": { "login": "bricesuazo" },
+          "description": "Your One-Stop Online Voting Solution",
+          "isArchived": false,
+          "forkCount": 8,
+          "id": "R_kgDOIUfekA",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/529dc1d4c1d4e697e2c59a8b092c67dfac2c5014f9895c0498a071e7fc4ea1c8/bricesuazo/eboto",
+          "stargazerCount": 56,
+          "primaryLanguage": { "name": "TypeScript", "color": "#3178c6" }
+        },
+        {
+          "name": "kabsu.me",
+          "url": "https://github.com/bricesuazo/kabsu.me",
+          "owner": { "login": "bricesuazo" },
+          "description": "A social media platform exclusive only for Cavite State University students, faculty, and alumni.",
+          "isArchived": false,
+          "forkCount": 0,
+          "id": "MDEwOlJlcG9zaXRvcnkzMzg4MDQ1MTE=",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/1e34c53da1be653ca3e3bfa1225591c1df08b584125420d6de53870dd1ec6a6a/bricesuazo/kabsu.me",
+          "stargazerCount": 18,
+          "primaryLanguage": { "name": "TypeScript", "color": "#3178c6" }
+        },
+        {
+          "name": "scrtmsg",
+          "url": "https://github.com/bricesuazo/scrtmsg",
+          "owner": { "login": "bricesuazo" },
+          "description": "Get message from anonymous.",
+          "isArchived": false,
+          "forkCount": 1,
+          "id": "R_kgDOIypOmA",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/671847521f494438dda180f66dba8ef9c0533845c1f35eb443fff81e76637c6d/bricesuazo/scrtmsg",
+          "stargazerCount": 3,
+          "primaryLanguage": { "name": "TypeScript", "color": "#3178c6" }
+        },
+        {
+          "name": "bricesuazo.com",
+          "url": "https://github.com/bricesuazo/bricesuazo.com",
+          "owner": { "login": "bricesuazo" },
+          "description": "My personal website portfolio.",
+          "isArchived": false,
+          "forkCount": 0,
+          "id": "R_kgDOHoWcgg",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/81029ae8460826b88d63f9f8615eb4828082c14423d657337e05ee373245d937/bricesuazo/bricesuazo.com",
+          "stargazerCount": 2,
+          "primaryLanguage": { "name": "TypeScript", "color": "#3178c6" }
+        },
+        {
+          "name": "swardify",
+          "url": "https://github.com/bricesuazo/swardify",
+          "owner": { "login": "bricesuazo" },
+          "description": null,
+          "isArchived": false,
+          "forkCount": 0,
+          "id": "R_kgDOJ6FI6w",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/3c992fbf544315bc827b35ce5cdd8f7ce63f20f0acb52dae3a06e4759781691b/bricesuazo/swardify",
+          "stargazerCount": 1,
+          "primaryLanguage": { "name": "Jupyter Notebook", "color": "#DA5B0B" }
+        },
+        {
+          "name": "cvsu",
+          "url": "https://github.com/bricesuazo/cvsu",
+          "owner": { "login": "bricesuazo" },
+          "description": "Code repo all about CvSU",
+          "isArchived": false,
+          "forkCount": 0,
+          "id": "R_kgDOHIs9qw",
+          "openGraphImageUrl": "https://opengraph.githubassets.com/4cf7d8a51be7394bdd600f64372b62f0b76433163b5ffbc8a6bf1aa14b736cb8/bricesuazo/cvsu",
+          "stargazerCount": 0,
+          "primaryLanguage": { "name": "TypeScript", "color": "#3178c6" }
+        }
+      ]
+    }
+  }
+}

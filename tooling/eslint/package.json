@@ -27,7 +27,7 @@
     "@bricesuazo/prettier-config": "workspace:*",
     "@bricesuazo/tsconfig": "workspace:*",
     "eslint": "^8.52.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.5.4"
   },
   "eslintConfig": {
     "root": true,
