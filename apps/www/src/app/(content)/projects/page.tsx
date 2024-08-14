@@ -8,6 +8,12 @@ const projects = [
     url: "https://servebeez.com",
   },
   {
+    title: "North High - Official Website",
+    description:
+      "Official Website of Luis Y. Ferrer Jr. North National High School",
+    url: "https://northhigh.edu.ph",
+  },
+  {
     title: "eBoto",
     description:
       "One-Stop Online Voting Solution — A web-based voting platform that offers secure elections for any type of organization.",
